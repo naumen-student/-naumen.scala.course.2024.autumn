@@ -1,0 +1,45 @@
+Loading...
+Welcome to the Ammonite Repl 3.0.0-M2 (Scala 3.3.3 Java 22.0.2)
+@ val someName = "Gleb Kochergin" 
+someName: String = "Gleb Kochergin"
+
+@ val someNameReversed = someName.reverse 
+someNameReversed: String = "nigrehcoK belG"
+
+@ def hello(s: String): Unit = {
+  println(s"Hello Scala! This is $s")
+  } 
+defined function hello
+
+@ def hello_spanish(s: String): Unit = {
+  println(s"Hola Scala! This is $s")
+  } 
+defined function hello_spanish
+
+@ def hello_dutch(s: String): Unit = {
+  println(s"Guten Tag Scala! This is $s")
+  } 
+defined function hello_dutch
+
+@ hello(someName) 
+Hello Scala! This is Gleb Kochergin
+
+
+@ hello_spanish(someName) 
+Hola Scala! This is Gleb Kochergin
+
+
+@ hello_dutch(someName) 
+Guten Tag Scala! This is Gleb Kochergin
+
+
+@ hello(someNameReversed) 
+Hello Scala! This is nigrehcoK belG
+
+
+@ hello_spanish(someNameReversed) 
+Hola Scala! This is nigrehcoK belG
+
+
+@ hello_dutch(someNameReversed) 
+Guten Tag Scala! This is nigrehcoK belG
