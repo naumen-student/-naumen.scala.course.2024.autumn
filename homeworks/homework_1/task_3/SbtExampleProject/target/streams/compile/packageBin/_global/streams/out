@@ -1,0 +1,11 @@
+[debug] Packaging C:\Users\funov\IdeaProjects\SbtExampleProject\target\scala-3.3.3\sbtexampleproject_3-0.1.0-SNAPSHOT.jar ...
+[debug] Input file mappings:
+[debug] 	example
+[debug] 	  C:\Users\funov\IdeaProjects\SbtExampleProject\target\scala-3.3.3\classes\example
+[debug] 	example\Main$.class
+[debug] 	  C:\Users\funov\IdeaProjects\SbtExampleProject\target\scala-3.3.3\classes\example\Main$.class
+[debug] 	example\Main.class
+[debug] 	  C:\Users\funov\IdeaProjects\SbtExampleProject\target\scala-3.3.3\classes\example\Main.class
+[debug] 	example\Main.tasty
+[debug] 	  C:\Users\funov\IdeaProjects\SbtExampleProject\target\scala-3.3.3\classes\example\Main.tasty
+[debug] Done packaging.
