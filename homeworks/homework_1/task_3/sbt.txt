@@ -1,0 +1,26 @@
+PS C:\Users\garma\IdeaProjects\hello_world> sbt
+[info] welcome to sbt 1.10.2 (Oracle Corporation Java 1.8.0_421)
+[info] loading project definition from C:\Users\garma\IdeaProjects\hello_world\project
+[info] loading settings for project root from build.sbt ...
+[info] set current project to hello_world (in build file:/C:/Users/garma/IdeaProjects/hello_world/)
+[error] server failed to start on local:sbt-server-43144c67344dc5a89651. java.io.IOException: Could not create lock for \\.\pipe\sbt-server-43144c67344dc5a89651_lock, error 5
+sbt:hello_world> ~run
+[warn] build source files have changed
+[warn] modified files:
+[warn]   C:\Users\garma\IdeaProjects\hello_world\build.sbt
+[warn] Apply these changes by running `reload`.
+[warn] Automatically reload the build when source changes are detected by setting `Global / onChangedBuildSource := ReloadOnSourceChanges`.
+[warn] Disable this warning by setting `Global / onChangedBuildSource := IgnoreSourceChanges`.
+[info] compiling 1 Scala source to C:\Users\garma\IdeaProjects\hello_world\target\scala-3.3.3\classes ...
+[info] running run
+The oldest person is 64
+Hello Scala! This is Ayur Garmaev
+Hola Scala! This is Ayur Garmaev
+Bonjur Scala! This is Ayur Garmaev
+Hello Scala! This is veamraG ruyA
+Hola Scala! This is veamraG ruyA
+Bonjur Scala! This is veamraG ruyA
+[success] Total time: 5 s, completed 20.09.2024 13:34:02
+[error] server failed to start on local:sbt-server-43144c67344dc5a89651. java.io.IOException: Could not create lock for \\.\pipe\sbt-server-43144c67344dc5a89651_lock, error 5
+[info] 1. Monitoring source files for root/run...
+[info]    Press <enter> to interrupt or '?' for more options.
