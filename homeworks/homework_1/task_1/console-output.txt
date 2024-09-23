@@ -1,0 +1,37 @@
+PS W:\IdeaProjects\naumen-course-homework> scala
+Welcome to Scala 3.3.0 (1.8.0_292, Java OpenJDK 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Artem Polyakov"
+val name: String = Artem Polyakov
+
+scala> val helloWordEng = "Hello"
+val helloWordEng: String = Hello
+
+scala> val helloWordSpn = "Hola"
+val helloWordSpn: String = Hola
+
+scala> val helloWordGer = "Guten tag"
+val helloWordGer: String = Guten tag
+
+scala> val helloWorld = (firstWord: String, name: String) => println(s"$firstWord Scala! This is $name")
+val helloWorld: (String, String) => Unit = Lambda$1365/2018794816@5d27b4c1
+
+scala> helloWorld(helloWordEng, name)
+Hello Scala! This is Artem Polyakov
+
+scala> helloWorld(helloWordSpn, name)
+Hola Scala! This is Artem Polyakov
+
+scala> helloWorld(helloWordGer, name)
+Guten tag Scala! This is Artem Polyakov
+
+scala> helloWorld(helloWordGer, name.reverse)
+Guten tag Scala! This is vokayloP metrA
+
+scala> helloWorld(helloWordSpn, name.reverse)
+Hola Scala! This is vokayloP metrA
+
+scala> helloWorld(helloWordEng, name.reverse)
+Hello Scala! This is vokayloP metrA
+
