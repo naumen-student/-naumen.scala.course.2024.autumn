@@ -1,0 +1,89 @@
+PS C:\Users\skomo> scala
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.jline.terminal.impl.exec.ExecTerminalProvider$ReflectionRedirectPipeCreator (file:/C:/Users/skomo/AppData/Local/Coursier/cache/arc/https/github.com/scala/scala3/releases/download/3.5.1/scala3-3.5.1-x86_64-pc-win32.zip/scala3-3.5.1-x86_64-pc-win32/maven2/org/jline/jline-terminal/3.25.1/jline-terminal-3.25.1.jar) to constructor java.lang.ProcessBuilder$RedirectPipeImpl()
+WARNING: Please consider reporting this to the maintainers of org.jline.terminal.impl.exec.ExecTerminalProvider$ReflectionRedirectPipeCreator
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Welcome to Scala 3.5.1 (11.0.24, Java OpenJDK 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> Hello Scala! This is ${здесь ваше имя}
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |Hello Scala! This is ${здесь ваше имя}
+  |^^^^^
+  |Not found: Hello
+  |
+  | longer explanation available when compiling with `-explain`
+-- Warning: --------------------------------------------------------------------
+1 |Hello Scala! This is ${здесь ваше имя}
+  |      ^^^^^
+  |Alphanumeric method Scala is not declared infix; it should not be used as infix operator.
+  |Instead, use method syntax .Scala(...) or backticked identifier `Scala`.
+-- Warning: --------------------------------------------------------------------
+1 |Hello Scala! This is ${здесь ваше имя}
+  |                  ^^
+  |Alphanumeric method is is not declared infix; it should not be used as infix operator.
+  |Instead, use method syntax .is(...) or backticked identifier `is`.
+2 warnings found
+1 error found
+
+scala> println(Hello Scala! This is Sasha)
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |println(Hello Scala! This is Sasha)
+  |        ^^^^^
+  |        Not found: Hello
+  |
+  | longer explanation available when compiling with `-explain`
+-- Warning: --------------------------------------------------------------------
+1 |println(Hello Scala! This is Sasha)
+  |              ^^^^^
+  |Alphanumeric method Scala is not declared infix; it should not be used as infix operator.
+  |Instead, use method syntax .Scala(...) or backticked identifier `Scala`.
+-- Warning: --------------------------------------------------------------------
+1 |println(Hello Scala! This is Sasha)
+  |                          ^^
+  |Alphanumeric method is is not declared infix; it should not be used as infix operator.
+  |Instead, use method syntax .is(...) or backticked identifier `is`.
+2 warnings found
+1 error found
+
+scala> println("Hello Scala! This is Sasha")
+Hello Scala! This is Sasha
+
+scala> val greeting = "Hello"
+val greeting: String = Hello
+
+scala> val name = "Sasha"
+val name: String = Sasha
+
+scala> println("${greeting} Scala! This is ${name}")
+${greeting} Scala! This is ${name}
+
+scala> println(s"$greeting Scala! This is $name")
+Hello Scala! This is Sasha
+
+scala> greeting = "Привет"
+-- [E052] Type Error: ----------------------------------------------------------
+1 |greeting = "Привет"
+  |^^^^^^^^^^^^^^^^^^^
+  |Reassignment to val greeting
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> val greeting = "Привет"
+val greeting: String = Привет
+
+scala> println(s"$greeting Scala! This is $name")
+Привет Scala! This is Sasha
+
+scala> val reversedName = name.reverse
+val reversedName: String = ahsaS
+
+scala> val greeting = "Guten tag"
+val greeting: String = Guten tag
+
+scala> println(s"$greeting Scala! This is $reversedName")
+Guten tag Scala! This is ahsaS
+
+scala>
