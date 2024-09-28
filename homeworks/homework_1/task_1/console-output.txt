@@ -1,0 +1,27 @@
+~/IdeaProjects ❯ scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_421).
+Type in expressions for evaluation. Or try :help.
+
+scala> var name = "Max"
+name: String = Max
+
+scala> println(s"Hello Scala! This is ${name}")
+Hello Scala! This is Max
+
+scala> println(s"Hola Scala! This is ${name}")
+Hola Scala! This is Max
+
+scala> println(s"Guten tag Scala! This is ${name}")
+Guten tag Scala! This is Max
+
+scala> var reverseName = "Max Chevychelov".reverse
+reverseName: String = volehcyvehC xaM
+
+scala> println(s"Hello Scala! This is ${reverseName}")
+Hello Scala! This is volehcyvehC xaM
+
+scala> println(s"Hola Scala! This is ${reverseName}")
+Hola Scala! This is volehcyvehC xaM
+
+scala> println(s"Guten tag Scala! This is ${reverseName}")
+Guten tag Scala! This is volehcyvehC xaM
