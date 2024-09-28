@@ -1,0 +1,38 @@
+C:\Users\12>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_341).
+Type in expressions for evaluation. Or try :help.
+
+scala> def hello(start: String, name: String) = s"$start Scala! This is $name"
+hello: (start: String, name: String)String
+
+scala> val defaultHello = "Hello"
+defaultHello: String = Hello
+
+scala> val name = "Artem Sorokin"
+name: String = Artem Sorokin
+
+scala> println(hello(defaultHello, name))
+Hello Scala! This is Artem Sorokin
+
+scala> val holaHello = "Hola"
+holaHello: String = Hola
+
+scala> val shortHello = "Hi"
+shortHello: String = Hi
+
+scala> println(hello(holaHello, name))
+Hola Scala! This is Artem Sorokin
+
+scala> println(hello(shortHello, name))
+Hi Scala! This is Artem Sorokin
+
+scala> println(hello(defaultHello, name.reverse))
+Hello Scala! This is nikoroS metrA
+
+scala> println(hello(holaHello, name.reverse))
+Hola Scala! This is nikoroS metrA
+
+scala> println(hello(shortHello, name.reverse))
+Hi Scala! This is nikoroS metrA
+
+scala>
