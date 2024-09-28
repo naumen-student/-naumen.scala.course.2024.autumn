@@ -1,0 +1,31 @@
+Loading...
+Welcome to the Ammonite Repl 3.0.0-M2 (Scala 3.3.3 Java 22.0.2)
+@ val name = "Zaikin Konstantin"
+name: String = "Zaikin Konstantin"
+
+@ println(s"Hello Scala! This is $name")
+Hello Scala! This is Zaikin Konstantin
+
+
+@ val greetings = Array("Hola", "Guten tag")
+greetings: Array[String] = Array("Hola", "Guten tag")
+
+@ greetings.foreach(greeting => println(s"$greeting Scala! This is $name"))
+Hola Scala! This is Zaikin Konstantin
+Guten tag Scala! This is Zaikin Konstantin
+
+
+@ val reversedName = name.reverse
+reversedName: String = "nitnatsnoK nikiaZ"
+
+@ println(s"Hello Scala! This is $reversedName")
+Hello Scala! This is nitnatsnoK nikiaZ
+
+
+@ greetings.foreach(greeting => println(s"$greeting Scala! This is $reversedName"))
+Hola Scala! This is nitnatsnoK nikiaZ
+Guten tag Scala! This is nitnatsnoK nikiaZ
+
+
+@ exit
+Bye!
