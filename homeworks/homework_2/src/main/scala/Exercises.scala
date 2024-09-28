@@ -34,7 +34,7 @@ object Exercises {
             else getFactors(n, divisor + 1, factors)
         }
 
-        getFactors(number).distinct
+        getFactors(number.abs).distinct
     }
 
 

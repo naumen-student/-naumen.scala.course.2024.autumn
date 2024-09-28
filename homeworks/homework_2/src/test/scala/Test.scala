@@ -38,39 +38,25 @@ object Test extends TestSuite {
         }
 
         'test_sumScalars - {
-            val vec1 = Exercises.Vector2D(1, 0)
-            val vec2 = Exercises.Vector2D(0, 1)
-            val vec3 = Exercises.Vector2D(1, 1)
-            val vec4 = Exercises.Vector2D(-1, -1)
-
-            assert(Exercises.sumScalars(vec1, vec2, vec3, vec4) == 0)
-
-            val vecZero = Exercises.Vector2D(0, 0)
-            assert(Exercises.sumScalars(vecZero, vecZero, vec1, vec1) == 0)
+            assert(Exercises.sumScalars(Vector2D(3, 3), Vector2D(3, 3), Vector2D(2, 2), Vector2D(2, 2)) == 26)
+            assert(Exercises.sumScalars(Vector2D(1, 1), Vector2D(1, 1), Vector2D(1, 1), Vector2D(1, 1)) == 4)
         }
 
         'test_sumCosines - {
-            val vec1 = Exercises.Vector2D(1, 0)
-            val vec2 = Exercises.Vector2D(0, 1)
-            val vec3 = Exercises.Vector2D(1, 1)
-            val vec4 = Exercises.Vector2D(-1, -1)
-
-            assert(Exercises.sumCosines(vec1, vec2, vec3, vec4) == 0)
-
-            val vecZero = Exercises.Vector2D(0, 0)
-            intercept[ArithmeticException] {
-                Exercises.sumCosines(vecZero, vec1, vec1, vecZero)
-            }
+            assert(Exercises.sumCosines(Vector2D(1, 0), Vector2D(0, 1), Vector2D(1, 0), Vector2D(1, 0)) == 1)
+            assert(Exercises.sumCosines(Vector2D(1, 0), Vector2D(1, 0), Vector2D(1, 0), Vector2D(1, 0)) == 2)
         }
 
         'test_sortByHeavyweight - {
-            val sortedBalls = Exercises.sortByHeavyweight()
+            assert(Exercises.sortByHeavyweight(Map("X" -> (3, 2), "Y" -> (2, 20))) == Seq("X", "Y"))
+
+            val defaultResult = Exercises.sortByHeavyweight()
             val expectedResult = Seq(
-                "Lithium", "Potassium", "Sodium", "Magnesium", "Calcium", "Cesium", "Graphite", "Silver", 
-                "Zirconium", "Chrome", "Tin", "Iron", "Cobalt", "Copper", "Nickel", "Titanium", "Lead", 
-                "Uranium", "Plutonium", "Tungsten", "Gold", "Platinum"
+                "Tin", "Platinum", "Nickel", "Aluminum", "Titanium", "Lead", "Sodium", "Uranium",
+                "Gold", "Tungsten", "Zirconium", "Chrome", "Iron", "Copper", "Silver", "Plutonium",
+                "Cobalt", "Cesium", "Calcium", "Lithium", "Magnesium", "Potassium", "Graphite"
             )
-            assert(sortedBalls == expectedResult)
+            assert(defaultResult == expectedResult)
 
             val emptyBalls = Map[String, (Int, Double)]()
             assert(Exercises.sortByHeavyweight(emptyBalls) == Seq())
