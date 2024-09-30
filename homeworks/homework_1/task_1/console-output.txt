@@ -1,0 +1,27 @@
+C:\Users\kopyr>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 11.0.24).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Artem Kopyrkin"
+name: String = Artem Kopyrkin
+
+scala> "Hello Scala! This is ${name}"
+res0: String = Hello Scala! This is ${name}
+
+scala> s"Hello Scala! This is ${name}"
+res1: String = Hello Scala! This is Artem Kopyrkin
+
+scala> s"Hola Scala! This is ${name}"
+res2: String = Hola Scala! This is Artem Kopyrkin
+
+scala> s"Guten tag Scala! This is ${name}"
+res3: String = Guten tag Scala! This is Artem Kopyrkin
+
+scala> println(s"Guten tag Scala! This is ${name.reverse}")
+Guten tag Scala! This is nikrypoK metrA
+
+scala> println(s"Hola Scala! This is ${name.reverse}")
+Hola Scala! This is nikrypoK metrA
+
+scala> println(s"Hello Scala! This is ${name.reverse}")
+Hello Scala! This is nikrypoK metrA
