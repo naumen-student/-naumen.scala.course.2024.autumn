@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+
 object Exercises {
 
     /*ПРИМЕР*/

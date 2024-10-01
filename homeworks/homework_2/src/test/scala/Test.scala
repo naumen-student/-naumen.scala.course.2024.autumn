@@ -22,17 +22,17 @@ object Test extends TestSuite{
             assert(Exercises.primeFactor(2) == Seq(2))
         }
         'test_sumScalars - {
-            assert(Exercises.sumScalars(Vector2D(0, 0), Vector2D(0, 0), Vector2D(1, 1), Vector2D(1, 1)) == 2)
-            assert(Exercises.sumScalars(Vector2D(-2, -2), Vector2D(2, 2), Vector2D(2, 2), Vector2D(2, 2)) == 0)
-            assert(Exercises.sumScalars(Vector2D(5, 5), Vector2D(3, 3), Vector2D(3, 3), Vector2D(5, 5)) == 30 * 2)
-            assert(Exercises.sumScalars(Vector2D(3, 3), Vector2D(3, 3), Vector2D(3, 3), Vector2D(3, 3)) == 9 * 4)
+            assert(Exercises.sumScalars(Exercises.Vector2D(0, 0), Exercises.Vector2D(0, 0), Exercises.Vector2D(1, 1), Exercises.Vector2D(1, 1)) == 2)
+            assert(Exercises.sumScalars(Exercises.Vector2D(-2, -2), Exercises.Vector2D(2, 2), Exercises.Vector2D(2, 2), Exercises.Vector2D(2, 2)) == 0)
+            assert(Exercises.sumScalars(Exercises.Vector2D(5, 5), Exercises.Vector2D(3, 3), Exercises.Vector2D(3, 3), Exercises.Vector2D(5, 5)) == 30 * 2)
+            assert(Exercises.sumScalars(Exercises.Vector2D(3, 3), Exercises.Vector2D(3, 3), Exercises.Vector2D(3, 3), Exercises.Vector2D(3, 3)) == 9 * 4)
         }
         'test_sumCosines - {
-            assert(Exercises.sumCosines(Vector2D(1, 0), Vector2D(0, 1), Vector2D(0, 1), Vector2D(1, 0)) == 0)
-            assert(Exercises.sumCosines(Vector2D(-2, -2), Vector2D(2, 2), Vector2D(2, 2), Vector2D(2, 2)) == 0)
-            assert(Exercises.sumCosines(Vector2D(5, 5), Vector2D(3, 3), Vector2D(3, 3), Vector2D(5, 5)) == 2)
-            assert(Exercises.sumCosines(Vector2D(8, 3), Vector2D(3, 3), Vector2D(6, 3), Vector2D(3, 3)) > 1.859)
-            assert(Exercises.sumCosines(Vector2D(8, 3), Vector2D(3, 3), Vector2D(6, 3), Vector2D(3, 3)) < 1.86)
+            assert(Exercises.sumCosines(Exercises.Vector2D(1, 0), Exercises.Vector2D(0, 1), Exercises.Vector2D(0, 1), Exercises.Vector2D(1, 0)) == 0)
+            assert(Exercises.sumCosines(Exercises.Vector2D(-2, -2), Exercises.Vector2D(2, 2), Exercises.Vector2D(2, 2), Exercises.Vector2D(2, 2)) == 0)
+            assert(Exercises.sumCosines(Exercises.Vector2D(5, 5), Exercises.Vector2D(3, 3), Exercises.Vector2D(3, 3), Exercises.Vector2D(5, 5)) == 2)
+            assert(Exercises.sumCosines(Exercises.Vector2D(8, 3), Exercises.Vector2D(3, 3), Exercises.Vector2D(6, 3), Exercises.Vector2D(3, 3)) > 1.859)
+            assert(Exercises.sumCosines(Exercises.Vector2D(8, 3), Exercises.Vector2D(3, 3), Exercises.Vector2D(6, 3), Exercises.Vector2D(3, 3)) < 1.86)
         }
         'test_sortByHeavyweight - {
             assert(Exercises.sortByHeavyweight() == Seq(
