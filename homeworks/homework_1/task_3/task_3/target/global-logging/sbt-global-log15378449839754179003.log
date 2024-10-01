@@ -1,0 +1,11 @@
+[debug] > Exec(va 13, None, None)
+[error] Expected ID character
+[error] Not a valid command: va
+[error] Expected project ID
+[error] Expected configuration
+[error] Expected ':'
+[error] Expected key
+[error] Not a valid key: va
+[error] va 13
+[error]   ^
+[debug] > Exec(idea-shell, None, None)

@@ -1,0 +1,44 @@
+Loading...
+Welcome to the Ammonite Repl 3.0.0 (Scala 3.5.1 Java 23)
+@ val myName = "Ilya Kuksovsky"
+myName: String = "Ilya Kuksovsky"
+
+@ def greetings(str: String): Unit = {
+> println(s"Hello Scala! This is $str")
+> }
+defined function greetings
+
+@ greetings(myName)
+Hello Scala! This is Ilya Kuksovsky
+
+
+@ def greetingsHola(str: String): Unit = {
+> println(s"Hola Scala! This is $str")
+> }
+defined function greetingsHola
+
+@ greetingsHola(myName)
+Hola Scala! This is Ilya Kuksovsky
+
+
+@ def greetingsGutenTag(str: String): Unit = {
+> println(s"Guten tag Scala! This is $str")
+> }
+defined function greetingsGutenTag
+
+@ greetingsGutenTag(myName)
+Guten tag Scala! This is Ilya Kuksovsky
+
+
+@ greetings(myName.reverse)
+Hello Scala! This is yksvoskuK aylI
+
+
+@ greetingsHola(myName.reverse)
+Hola Scala! This is yksvoskuK aylI
+
+
+@ greetingsGutenTag(myName.reverse)
+Guten tag Scala! This is yksvoskuK aylI
+
+
