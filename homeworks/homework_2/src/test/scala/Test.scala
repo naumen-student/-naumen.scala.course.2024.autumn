@@ -34,5 +34,17 @@ object Test extends TestSuite{
             assert(Exercises.sumCosines(Vector2D(1, 0), Vector2D(1, 0), Vector2D(0, 1), Vector2D(0, 1)) == 2)
             assert(Exercises.sumCosines(Vector2D(1, 0), Vector2D(-1, 0), Vector2D(-1, 0), Vector2D(1, 0)) == -2)
         }
+        'test_sortByHeavyweight - {
+            val fullResult = Seq(
+                "Tin", "Platinum", "Nickel", "Aluminum", "Titanium", "Lead", "Sodium", "Uranium", "Gold", "Tungsten",
+                "Zirconium", "Chrome", "Iron", "Copper", "Silver", "Plutonium", "Cobalt", "Cesium", "Calcium",
+                "Lithium", "Magnesium", "Potassium", "Graphite"
+            )
+
+            assert(Exercises.sortByHeavyweight() == fullResult)
+            assert(Exercises.sortByHeavyweight(Map("Cat" -> (16, 0.8), "Dog" -> (15, 1.05))) == Seq("Cat", "Dog"))
+            assert(Exercises.sortByHeavyweight(Map("SmallCat" -> (10, 0.8))) == Seq("SmallCat"))
+            assert(Exercises.sortByHeavyweight(Map.empty) == Seq())
+        }
     }
 }

@@ -81,7 +81,11 @@ object Exercises {
             "Lead" ->     (2,   11.336), "Titanium" ->  (2,   10.50), "Silver" ->    (4,   4.505), "Uranium" ->   (2,   19.04),
             "Chrome" ->   (3,   7.18),   "Cesium" ->    (7,   1.873), "Zirconium" -> (3,   6.45)
         )
-
-    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = ???
+    def (ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = {
+        ballsArray
+          .toSeq
+          .sortBy { case (name, (radius, density)) => ((4 / 3) * Math.PI * Math.pow(radius, 3)) * density }
+          .map { case (name, (radius, density)) => name }
+    }
 
 }
