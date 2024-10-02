@@ -15,5 +15,13 @@ object Test extends TestSuite{
             assert(Exercises.sumOfDivBy3Or5(-10, 10) == 0)
             assert(Exercises.sumOfDivBy3Or5(-100, 0) == -2418)
         }
+        'test_primeFactor - {
+            assert(Exercises.primeFactor(1111) == Seq(11,101))
+            assert(Exercises.primeFactor(666) == Seq(2,3,37))
+            assert(Exercises.primeFactor(0) == Seq())
+            assert(Exercises.primeFactor(1) == Seq())
+            assert(Exercises.primeFactor(-1) == Seq())
+            assert(Exercises.primeFactor(-1111) == Seq(11,101))
+        }
     }
 }

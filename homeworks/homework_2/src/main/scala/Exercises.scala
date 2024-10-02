@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+
 object Exercises {
 
     /*ПРИМЕР*/
@@ -27,7 +29,16 @@ object Exercises {
     Число 80 раскладывается на множители 1 * 2 * 2 * 2 * 2 * 5, результат выполнения функции => Seq(2, 5).
     Число 98 можно разложить на множители 1 * 2 * 7 * 7, результат выполнения функции => Seq(2, 7).*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def primeFactor(number: Int): Seq[Int] = ???
+    def primeFactor(number: Int): Seq[Int] = {
+        @tailrec
+        def primeFactorRec(n: Int, divisor: Int, primeFactors: Seq[Int]): Seq[Int] = {
+            if (n == 1 || n == -1|| n == 0) primeFactors
+            else if (n % divisor == 0) primeFactorRec(n / divisor, divisor, primeFactors :+ divisor)
+            else primeFactorRec(n, divisor + 1, primeFactors)
+        }
+
+        primeFactorRec(number, 2, Seq.empty[Int]).distinct
+    }
 
 
 
