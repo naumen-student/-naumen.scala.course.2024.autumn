@@ -23,5 +23,16 @@ object Test extends TestSuite{
             assert(Exercises.primeFactor(-1) == Seq())
             assert(Exercises.primeFactor(-1111) == Seq(11,101))
         }
+        'test_sumScalars - {
+            assert(Exercises.sumScalars(Vector2D(0, 0), Vector2D(0, 0), Vector2D(0, 0), Vector2D(0, 0)) == 0)
+            assert(Exercises.sumScalars(Vector2D(1, 2), Vector2D(-3, -4), Vector2D(5, 6), Vector2D(-7, -8)) == -94)
+            assert(Exercises.sumScalars(Vector2D(0, 1), Vector2D(1, 0), Vector2D(0, -1), Vector2D(-1, 0)) == 0)
+            assert(Exercises.sumScalars(Vector2D(1, 2), Vector2D(3, 4), Vector2D(5, 6), Vector2D(7, 8)) == 94)
+        }
+        'test_sumCosines - {
+            assert(Exercises.sumCosines(Vector2D(0, 1), Vector2D(1, 0), Vector2D(0, -1), Vector2D(-1, 0)) == 0)
+            assert(Exercises.sumCosines(Vector2D(1, 0), Vector2D(1, 0), Vector2D(0, 1), Vector2D(0, 1)) == 2)
+            assert(Exercises.sumCosines(Vector2D(1, 0), Vector2D(-1, 0), Vector2D(-1, 0), Vector2D(1, 0)) == -2)
+        }
     }
 }
