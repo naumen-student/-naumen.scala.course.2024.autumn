@@ -1,0 +1,43 @@
+an.s.belousova@macbook -naumen.scala.course.2024.autumn % scala
+Welcome to Scala 3.5.1 (22.0.1, Java OpenJDK 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> var name = "Belousova Anastasia"
+var name: String = Belousova Anastasia
+
+scala> println(s"Hello Scala! This is ${name}")
+Hello Scala! This is Belousova Anastasia
+
+scala> def hello(hi: String, name: String): Unit = {
+     | println(s"${hi} Scala! This is ${name}")
+     | }
+def hello(hi: String, name: String): Unit
+
+scala>  val greetings = Map(
+     |       "English" -> "Hello",
+     |                   "Spanish" -> "Hola",
+     |                   "French" -> "Bonjour",
+     |                   "Russian" -> "Привет"
+     |       )
+val greetings: Map[String, String] = Map(English -> Hello, Spanish -> Hola, French -> Bonjour, Russian -> Привет)
+
+scala> greetings.values.foreach { greeting =>
+     |             hello(greeting, name)
+     |         }
+Hello Scala! This is Belousova Anastasia
+Hola Scala! This is Belousova Anastasia
+Bonjour Scala! This is Belousova Anastasia
+Привет Scala! This is Belousova Anastasia
+
+scala> var reversedName = name.reverse
+var reversedName: String = aisatsanA avosuoleB
+
+scala> greetings.values.foreach { greeting =>
+     |             hello(greeting, reversedName)
+     |         }
+Hello Scala! This is aisatsanA avosuoleB
+Hola Scala! This is aisatsanA avosuoleB
+Bonjour Scala! This is aisatsanA avosuoleB
+Привет Scala! This is aisatsanA avosuoleB
+
+scala> :q
