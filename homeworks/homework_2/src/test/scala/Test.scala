@@ -41,5 +41,27 @@ object Test extends TestSuite{
 
             assert(Exercises.sumCosines(vec1, vec2, vec3, vec4) == (Exercises.cosBetween(vec1, vec2) + Exercises.cosBetween(vec3, vec4)))
         }
+        'test_sortByHeavyweight - {
+            val balls3 = Map(
+                "Aluminum" -> (3, 2.6889),  "Iron" -> (3, 7.874),
+                "Copper" -> (3, 8.96), "Plutonium" -> (3, 19.25),
+                "Chrome" -> (3, 7.18), "Zirconium" -> (3, 6.45)
+            )
+            val expectedOrder3 = Seq("Aluminum", "Zirconium", "Chrome", "Iron", "Copper", "Plutonium")
+            assert(Exercises.sortByHeavyweight(balls3) == expectedOrder3)
+
+            val balls2 = Map(
+            "Tungsten" -> (2, 19.35), "Gold" -> (2, 19.32), "Nickel" -> (2, 8.91),
+                "Lead" -> (2, 11.336), "Titanium" -> (2, 10.50),"Uranium" -> (2, 19.04),
+            )
+            val expectedOrder2 = Seq("Nickel", "Titanium", "Lead", "Uranium", "Gold", "Tungsten")
+            assert(Exercises.sortByHeavyweight(balls2) == expectedOrder2)
+
+            val ballsMix = Map(
+                "a" -> (1, 9.0), "b" -> (2, 50.0), "c" -> (120, 1.0), "d" -> (3, 7.0),
+            )
+            val ballsMixOrder = Seq("a", "d", "b", "c")
+            assert(Exercises.sortByHeavyweight(ballsMix) == ballsMixOrder)
+        }
     }
 }
