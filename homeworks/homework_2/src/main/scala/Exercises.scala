@@ -16,7 +16,13 @@ object Exercises {
     /*Реализовать функцию, которая возвращает сумму всех целых чисел в заданном диапазоне (от iForm до iTo), которые делятся
     на 3 или на 5.*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = ???
+    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = {
+        var sum = 0;
+        for {i <- iFrom to iTo
+             if i % 3 == 0 || i % 5 == 0
+             } sum += i;
+        return sum;
+    }
 
 
 
