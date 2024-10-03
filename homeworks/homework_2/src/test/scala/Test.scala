@@ -1,3 +1,4 @@
+import Exercises.Vector2D
 import utest._
 
 object Test extends TestSuite{
@@ -22,6 +23,23 @@ object Test extends TestSuite{
             assert(Exercises.primeFactor(3) == Seq(3))
             assert(Exercises.primeFactor(100) == Seq(2, 5))
             assert(Exercises.primeFactor(101) == Seq(101))
+        }
+        'test_sumScalars - {
+            val vec1 = Vector2D(1, 2)
+            val vec2 = Vector2D(3, 4)
+            val vec3 = Vector2D(5, 6)
+            val vec4 = Vector2D(7, 8)
+
+            assert(Exercises.sumScalars(vec1, vec2, vec3, vec4) == (Exercises.scalar(vec1, vec2) + Exercises.scalar(vec3, vec4)))
+        }
+
+        'test_sumCosines - {
+            val vec1 = Vector2D(1, 2)
+            val vec2 = Vector2D(3, 4)
+            val vec3 = Vector2D(5, 6)
+            val vec4 = Vector2D(7, 8)
+
+            assert(Exercises.sumCosines(vec1, vec2, vec3, vec4) == (Exercises.cosBetween(vec1, vec2) + Exercises.cosBetween(vec3, vec4)))
         }
     }
 }
