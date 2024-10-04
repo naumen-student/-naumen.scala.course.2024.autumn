@@ -1,0 +1,32 @@
+Welcome to Scala 3.3.4 (21.0.1, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Lada Shipilovskikh"
+val name: String = Lada Shipilovskikh
+
+scala> val greet = s"Hello Scala! This is ${name}"
+val greet: String = Hello Scala! This is Lada Shipilovskikh
+
+scala> System.out.println(greet)
+Hello Scala! This is Lada Shipilovskikh
+
+scala> val newGreet = greet.replace("Hello","Hola")
+val newGreet: String = Hola Scala! This is Lada Shipilovskikh
+
+scala> System.out.println(newGreet)
+Hola Scala! This is Lada Shipilovskikh
+
+scala> val revName = name.reverse
+val revName: String = hkiksvolipihS adaL
+
+scala> val greetWithRevName = s"Hello Scala! This is ${revName}"
+val greetWithRevName: String = Hello Scala! This is hkiksvolipihS adaL
+
+scala> System.out.println(greetWithRevName)
+Hello Scala! This is hkiksvolipihS adaL
+
+scala> val newGreetWithRevName = greetWithRevName.replace("Hello","Hola")
+val newGreetWithRevName: String = Hola Scala! This is hkiksvolipihS adaL
+
+scala> System.out.println(newGreetWithRevName)
+Hola Scala! This is hkiksvolipihS adaL
