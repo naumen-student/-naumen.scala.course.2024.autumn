@@ -1,0 +1,19 @@
+Welcome to Scala 2.12.19 (Java HotSpot(TM) 64-Bit Server VM, Java 21.0.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> val a = "Sofia"
+a: String = Sofia
+
+scala> println(s"Hello Scala! This is ${a}")
+Hello Scala! This is Sofia
+
+scala> println(s"Hola Scala! This is ${a}")
+Hola Scala! This is Sofia
+
+scala> println(s"Guten tag Scala! This is ${a}")
+Guten tag Scala! This is Sofia
+                         
+scala> println(s"Hello Scala! This is ${a.rever"
+Hello Scala! This is aifoS            
+
+scala>
