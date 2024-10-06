@@ -8,5 +8,5 @@ case class Table(width: Int, height: Int) {
     Try(cells(ix + iy * width)).toOption
 
   def setCell(ix: Int, iy: Int, cell: Cell): Unit =
-    Try(cells(ix + iy * width) = cell).toOption
+    Try(cells(ix + iy * width) = cell).foreach(identity)
 }
