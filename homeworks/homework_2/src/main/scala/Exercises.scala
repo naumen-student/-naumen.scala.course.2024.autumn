@@ -1,3 +1,4 @@
+import utest._
 object Exercises {
 
     /*ПРИМЕР*/
