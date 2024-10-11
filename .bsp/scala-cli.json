@@ -1,0 +1,20 @@
+{
+  "name": "scala-cli",
+  "argv": [
+    "C:\\Users\\79193\\AppData\\Local\\Coursier\\data\\bin\\.scala-cli.aux.exe",
+    "bsp",
+    "--json-options",
+    "C:\\Users\\79193\\-naumen.scala.course.2024.autumn\\.scala-build\\ide-options-v2.json",
+    "--json-launcher-options",
+    "C:\\Users\\79193\\-naumen.scala.course.2024.autumn\\.scala-build\\ide-launcher-options.json",
+    "--envs-file",
+    "C:\\Users\\79193\\-naumen.scala.course.2024.autumn\\.scala-build\\ide-envs.json",
+    "C:\\Users\\79193\\-naumen.scala.course.2024.autumn"
+  ],
+  "version": "1.5.1",
+  "bspVersion": "2.1.1",
+  "languages": [
+    "scala",
+    "java"
+  ]
+}
