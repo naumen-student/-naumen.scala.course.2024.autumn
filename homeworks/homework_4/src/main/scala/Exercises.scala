@@ -143,10 +143,7 @@ object SideEffectExercise {
 
 
     class PhoneServiceSafety(unsafePhoneService: SimplePhoneService) {
-        def findPhoneNumberSafe(num: String): Option[PhoneRecord] = {
-            val phoneRecord = unsafePhoneService.findPhoneNumber(num)
-            Option(phoneRecord)
-        }
+        def findPhoneNumberSafe(num: String): Option[PhoneRecord] = Option(unsafePhoneService.findPhoneNumber(num))
 
         def addPhoneToBaseSafe(phone: String): Either[String, Unit] = {
             unsafePhoneService.addPhoneToBase(phone) match {
@@ -172,7 +169,7 @@ object SideEffectExercise {
             } yield "ok"
 
             result match {
-                case Some(_) => "ok"
+                case "ok" => "ok"
                 case None => "Error in changing phone"
             }
         }
