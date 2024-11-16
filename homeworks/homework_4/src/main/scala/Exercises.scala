@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+import scala.util.Random
 
 object Exercises {
 
@@ -22,8 +24,17 @@ object Exercises {
         result
     }
 
-    def findSumFunctional(items: List[Int], sumValue: Int) = {
-        (-1, -1)
+    def findSumFunctional(items: List[Int], sumValue: Int): (Int, Int) = {
+        @tailrec
+        def go(index: Int): (Int, Int) = {
+            if (index >= items.length) (-1, -1)
+            else {
+                val diffIndex = items.indexOf(sumValue - items(index))
+                if (diffIndex != -1 && diffIndex != index) (diffIndex, index)
+                else go(index + 1)
+            }
+        }
+        go(0)
     }
 
 
@@ -49,8 +60,18 @@ object Exercises {
     }
 
     def tailRecRecursion(items: List[Int]): Int = {
-        1
+        @tailrec
+        def go(items: List[Int], index: Int, acc: Int = 1): Int = {
+            items match {
+                case head :: tail =>
+                    val res = if (head % 2 == 0) head else -head
+                    go(tail, index - 1, res * acc + index)
+                case _ => acc
+            }
+        }
+        go(items.reverse, items.size)
     }
+
 
     /**
      * Задание №3
@@ -60,7 +81,18 @@ object Exercises {
      */
 
     def functionalBinarySearch(items: List[Int], value: Int): Option[Int] = {
-        None
+        @tailrec
+        def go(low: Int, high: Int): Option[Int] =
+            if (low > high) None
+            else {
+                val mid = (low + high) / 2
+                items(mid) match {
+                    case item if item == value => Some(mid)
+                    case item if item <= value => go(mid + 1, high)
+                    case _ => go(low, mid - 1)
+                }
+            }
+        go(0, items.size - 1)
     }
 
     /**
@@ -71,9 +103,15 @@ object Exercises {
      * Именем является строка, не содержащая иных символов, кроме буквенных, а также начинающаяся с заглавной буквы.
      */
 
-    def generateNames(namesСount: Int): List[String] = {
-        if (namesСount < 0) throw new Throwable("Invalid namesCount")
-        Nil
+    def generateNames(namesCount: Int): List[String] = {
+        if (namesCount < 0) throw new Throwable("Invalid namesCount")
+        val alphabet = ('a' to 'z') ++ ('A' to 'Z')
+        @tailrec
+        def generateNamesRec(remainingCount: Int, acc: List[String] = Nil): List[String] = {
+            if (remainingCount == 0) acc.map(_.toLowerCase.capitalize)
+            else generateNamesRec(remainingCount - 1, List.fill(10)(alphabet(Random.nextInt(alphabet.length))).mkString :: acc)
+        }
+        generateNamesRec(namesCount)
     }
 
 }
@@ -111,14 +149,27 @@ object SideEffectExercise {
 
 
     class PhoneServiceSafety(unsafePhoneService: SimplePhoneService) {
-        def findPhoneNumberSafe(num: String) = ???
+        def findPhoneNumberSafe(num: String): Option[String] =
+            Option(unsafePhoneService.findPhoneNumber(num))
 
-        def addPhoneToBaseSafe(phone: String) = ???
+        def addPhoneToBaseSafe(phone: String): Either[String, Unit] =
+            if (checkPhoneNumber(phone)) Right(unsafePhoneService.addPhoneToBase(phone))
+            else Left("Invalid phone string")
 
-        def deletePhone(phone: String) = ???
+        def deletePhone(phone: String): Either[String, Unit] =
+            findPhoneNumberSafe(phone) match {
+                case Some(num) => Right(unsafePhoneService.deletePhone(num))
+                case None => Left(s"Phone $phone not found")
+            }
     }
 
     class ChangePhoneServiceSafe(phoneServiceSafety: PhoneServiceSafety) extends ChangePhoneService {
-        override def changePhone(oldPhone: String, newPhone: String): String = ???
+        override def changePhone(oldPhone: String, newPhone: String): String = {
+            phoneServiceSafety.findPhoneNumberSafe(oldPhone).map(phoneServiceSafety.deletePhone)
+            phoneServiceSafety.addPhoneToBaseSafe(newPhone) match {
+                case Left(err) => err
+                case _   => "ok"
+            }
+        }
     }
 }
