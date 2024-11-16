@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite hostname="DESKTOP-PFOK69S" name="Test2" tests="3" errors="0" failures="1" skipped="0" time="0.564" timestamp="2024-11-16T19:02:38">
+          <properties>
+      <property name="jline.esc.timeout" value="0"/><property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/><property name="sun.boot.library.path" value="C:\Program Files\Java\jre1.8.0_51\bin"/><property name="java.vm.version" value="25.51-b03"/><property name="java.vm.vendor" value="Oracle Corporation"/><property name="java.vendor.url" value="http://java.oracle.com/"/><property name="path.separator" value=";"/><property name="jna.loaded" value="true"/><property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/><property name="file.encoding.pkg" value="sun.io"/><property name="user.country" value="RU"/><property name="user.script" value=""/><property name="sun.java.launcher" value="SUN_STANDARD"/><property name="sun.os.patch.level" value=""/><property name="jna.nosys" value="true"/><property name="java.vm.specification.name" value="Java Virtual Machine Specification"/><property name="user.dir" value="C:\Users\Dmitriy\IdeaProjects\-naumen.scala.course.2024.autumn\homeworks\homework_5"/><property name="java.runtime.version" value="1.8.0_51-b16"/><property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/><property name="java.endorsed.dirs" value="C:\Program Files\Java\jre1.8.0_51\lib\endorsed"/><property name="os.arch" value="amd64"/><property name="java.io.tmpdir" value="C:\Users\Dmitriy\AppData\Local\Temp\"/><property name="line.separator" value="
+"/><property name="java.vm.specification.vendor" value="Oracle Corporation"/><property name="log4j.ignoreTCL" value="true"/><property name="user.variant" value=""/><property name="os.name" value="Windows 8.1"/><property name="sun.jnu.encoding" value="Cp1251"/><property name="jnidispatch.path" value="C:\Users\Dmitriy\AppData\Local\Temp\jna--853143282\jna9045558783687240408.dll"/><property name="java.library.path" value="C:\ProgramData\Oracle\Java\javapath;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Go\bin;C:\Program Files (x86)\sbt\bin;C:\Users\Dmitriy\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Dmitriy\AppData\Local\Programs\Python\Python310\;C:\Users\Dmitriy\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Dmitriy\AppData\Local\Programs\Python\Python39\;C:\Users\Dmitriy\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\CLion 2022.3.2\bin;;C:\Users\Dmitriy\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Dmitriy\Downloads\mingw32\bin;;C:\Program Files\JetBrains\PyCharm 2022.2.3\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\bin;;C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.3\bin;;C:\Program Files\Azure Data Studio\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2023.2.3\bin;;C:\Users\Dmitriy\.dotnet\tools;C:\Users\Dmitriy\go\bin;C:\Users\Dmitriy\AppData\Local\Coursier\data\bin;."/><property name="java.specification.name" value="Java Platform API Specification"/><property name="java.class.version" value="52.0"/><property name="sbt.ipcsocket.tmpdir" value="C:\Users\Dmitriy\AppData\Local\Temp\.sbtf686150e\ipcsocket"/><property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/><property name="os.version" value="6.3"/><property name="swoval.tmpdir" value="C:\Users\Dmitriy\AppData\Local\Temp\.sbtf686150e\swoval"/><property name="user.home" value="C:\Users\Dmitriy"/><property name="user.timezone" value="Asia/Yekaterinburg"/><property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/><property name="file.encoding" value="UTF-8"/><property name="java.specification.version" value="1.8"/><property name="java.class.path" value="C:\Program Files (x86)\sbt\\bin\sbt-launch.jar"/><property name="user.name" value="Dmitriy"/><property name="jline.shutdownhook" value="false"/><property name="java.vm.specification.version" value="1.8"/><property name="sun.java.command" value="xsbt.boot.Boot test"/><property name="java.home" value="C:\Program Files\Java\jre1.8.0_51"/><property name="sun.arch.data.model" value="64"/><property name="user.language" value="ru"/><property name="java.specification.vendor" value="Oracle Corporation"/><property name="awt.toolkit" value="sun.awt.windows.WToolkit"/><property name="java.vm.info" value="mixed mode"/><property name="java.version" value="1.8.0_51"/><property name="java.ext.dirs" value="C:\Program Files\Java\jre1.8.0_51\lib\ext;C:\Windows\Sun\Java\lib\ext"/><property name="sun.boot.class.path" value="C:\Program Files\Java\jre1.8.0_51\lib\resources.jar;C:\Program Files\Java\jre1.8.0_51\lib\rt.jar;C:\Program Files\Java\jre1.8.0_51\lib\sunrsasign.jar;C:\Program Files\Java\jre1.8.0_51\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_51\lib\jce.jar;C:\Program Files\Java\jre1.8.0_51\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_51\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_51\classes"/><property name="java.vendor" value="Oracle Corporation"/><property name="sun.stderr.encoding" value="cp866"/><property name="file.separator" value="\"/><property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/><property name="sun.io.unicode.encoding" value="UnicodeLittle"/><property name="sun.cpu.endian" value="little"/><property name="sun.stdout.encoding" value="cp866"/><property name="sun.desktop" value="windows"/><property name="sun.cpu.isalist" value="amd64"/>
+    </properties>
+          <testcase classname="Test2" name="vectorsMustSum" time="0.442">
+                      
+                    </testcase><testcase classname="Test2" name="angleMustSum" time="0.012">
+                      <failure message="assert(angles.combineAll == DegreeAngle(result))
+angles: scala.collection.immutable.Vector[Task2.DegreeAngle] = Vector(DegreeAngle(3.1782865E8), DegreeAngle(-1.547083452E9), DegreeAngle(-1.38326908E8), DegreeAngle(-2.86728962E8), DegreeAngle(5.30767803E8), DegreeAngle(-1.469829525E9), DegreeAngle(-7.6105102E8), DegreeAngle(-6.11616958E8), DegreeAngle(-4.97184966E8), DegreeAngle(-5.0768041E7), DegreeAngle(1.12693809E8), DegreeAngle(3.084691E8), DegreeAngle(2.583695E7), DegreeAngle(1.645566204E9), DegreeAngle(-1.900945917E9), DegreeAngle(-6.97346617E8), DegreeAngle(-1.81257851E8), DegreeAngle(8.19948342E8), DegreeAngle(9.32971781E8), DegreeAngle(6.36284103E8), DegreeAngle(3.22702756E8), DegreeAngle(-1.66142E9), DegreeAngle(-1.620272668E9), DegreeAngle(-2.033654655E9), DegreeAngle(1.987980513E9), DegreeAngle(-2.105427802E9), DegreeAngle(-1.410628122E9), DegreeAngle(1.119496029E9), DegreeAngle(1.646625052E9), DegreeAngle(-1.81010116E9), DegreeAngle(5.1727211E8), DegreeAngle(-6.31131639E8), DegreeAngle(-1.432109044E9), DegreeAngle(5.84692353E8), DegreeAngle(3.42556989E8), DegreeAngle(1.404250288E9), DegreeAngle(-1.305236897E9), DegreeAngle(-5.29127816E8), DegreeAngle(-1.11285946E9), DegreeAngle(2.55134571E8), DegreeAngle(-6.83697883E8), DegreeAngle(3.39243317E8), DegreeAngle(-1.0232968E7), DegreeAngle(-1.263845897E9), DegreeAngle(-1.596392082E9), DegreeAngle(-9.11091162E8), DegreeAngle(-2.018196563E9), DegreeAngle(8.34000552E8), DegreeAngle(9.26266929E8), DegreeAngle(-1.619635901E9))
+result: Double = -255.0" type="utest.AssertionError">utest.AssertionError: assert(angles.combineAll == DegreeAngle(result))
+angles: scala.collection.immutable.Vector[Task2.DegreeAngle] = Vector(DegreeAngle(3.1782865E8), DegreeAngle(-1.547083452E9), DegreeAngle(-1.38326908E8), DegreeAngle(-2.86728962E8), DegreeAngle(5.30767803E8), DegreeAngle(-1.469829525E9), DegreeAngle(-7.6105102E8), DegreeAngle(-6.11616958E8), DegreeAngle(-4.97184966E8), DegreeAngle(-5.0768041E7), DegreeAngle(1.12693809E8), DegreeAngle(3.084691E8), DegreeAngle(2.583695E7), DegreeAngle(1.645566204E9), DegreeAngle(-1.900945917E9), DegreeAngle(-6.97346617E8), DegreeAngle(-1.81257851E8), DegreeAngle(8.19948342E8), DegreeAngle(9.32971781E8), DegreeAngle(6.36284103E8), DegreeAngle(3.22702756E8), DegreeAngle(-1.66142E9), DegreeAngle(-1.620272668E9), DegreeAngle(-2.033654655E9), DegreeAngle(1.987980513E9), DegreeAngle(-2.105427802E9), DegreeAngle(-1.410628122E9), DegreeAngle(1.119496029E9), DegreeAngle(1.646625052E9), DegreeAngle(-1.81010116E9), DegreeAngle(5.1727211E8), DegreeAngle(-6.31131639E8), DegreeAngle(-1.432109044E9), DegreeAngle(5.84692353E8), DegreeAngle(3.42556989E8), DegreeAngle(1.404250288E9), DegreeAngle(-1.305236897E9), DegreeAngle(-5.29127816E8), DegreeAngle(-1.11285946E9), DegreeAngle(2.55134571E8), DegreeAngle(-6.83697883E8), DegreeAngle(3.39243317E8), DegreeAngle(-1.0232968E7), DegreeAngle(-1.263845897E9), DegreeAngle(-1.596392082E9), DegreeAngle(-9.11091162E8), DegreeAngle(-2.018196563E9), DegreeAngle(8.34000552E8), DegreeAngle(9.26266929E8), DegreeAngle(-1.619635901E9))
+result: Double = -255.0
+	at utest.asserts.Util$.$anonfun$makeAssertError$1(Util.scala:26)
+	at utest.asserts.Util$$$Lambda$4473/1413528844.apply(Unknown Source)
+	at utest.framework.StackMarker$.dropInside(StackMarker.scala:11)
+	at utest.asserts.Util$.makeAssertError(Util.scala:25)
+	at utest.asserts.Asserts$.assertImpl(Asserts.scala:114)
+	at Test2$.$anonfun$tests$9(Test2.scala:20)
+	at Test2$$$Lambda$4469/863572656.apply$mcVI$sp(Unknown Source)
+	at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:158)
+	at Test2$.$anonfun$tests$8(Test2.scala:17)
+	at Test2$$$Lambda$4149/521282967.apply(Unknown Source)
+	at utest.framework.StackMarker$.dropOutside(StackMarker.scala:13)
+	at utest.framework.TestCallTree.run(Model.scala:35)
+	at utest.framework.TestCallTree.run(Model.scala:33)
+	at utest.TestRunner$.$anonfun$runAsync$4(TestRunner.scala:70)
+	at utest.TestRunner$$$Lambda$4139/999013623.apply(Unknown Source)
+	at utest.framework.Executor.utestWrap(Executor.scala:7)
+	at utest.framework.Executor.utestWrap$(Executor.scala:5)
+	at utest.TestSuite.utestWrap(TestSuite.scala:16)
+	at utest.TestRunner$.$anonfun$runAsync$2(TestRunner.scala:69)
+	at utest.TestRunner$$$Lambda$4112/1180941587.apply(Unknown Source)
+	at utest.TestRunner$.evaluateFutureTree(TestRunner.scala:146)
+	at utest.TestRunner$.$anonfun$evaluateFutureTree$2(TestRunner.scala:149)
+	at utest.TestRunner$$$Lambda$4119/1715067965.apply(Unknown Source)
+	at scala.concurrent.Future$.$anonfun$traverse$1(Future.scala:850)
+	at scala.concurrent.Future$$$Lambda$4124/125474702.apply(Unknown Source)
+	at scala.collection.IndexedSeqOptimized.foldLeft(IndexedSeqOptimized.scala:60)
+	at scala.collection.IndexedSeqOptimized.foldLeft$(IndexedSeqOptimized.scala:68)
+	at scala.collection.mutable.ArrayBuffer.foldLeft(ArrayBuffer.scala:49)
+	at scala.concurrent.Future$.traverse(Future.scala:850)
+	at utest.TestRunner$.evaluateFutureTree(TestRunner.scala:149)
+	at utest.TestRunner$.runAsync(TestRunner.scala:89)
+	at utest.runner.BaseRunner.runSuite(BaseRunner.scala:137)
+	at utest.runner.BaseRunner.$anonfun$makeTask$1(BaseRunner.scala:145)
+	at utest.runner.BaseRunner$$Lambda$3968/76052959.apply(Unknown Source)
+	at utest.runner.Task.executeInternal(Task.scala:38)
+	at utest.runner.Task.execute(Task.scala:20)
+	at sbt.TestRunner.runTest$1(TestFramework.scala:153)
+	at sbt.TestRunner.run(TestFramework.scala:168)
+	at sbt.TestFramework$$anon$3$$anonfun$$lessinit$greater$1.$anonfun$apply$1(TestFramework.scala:336)
+	at sbt.TestFramework$$anon$3$$anonfun$$lessinit$greater$1$$Lambda$3996/133347419.apply(Unknown Source)
+	at sbt.TestFramework$.sbt$TestFramework$$withContextLoader(TestFramework.scala:296)
+	at sbt.TestFramework$$anon$3$$anonfun$$lessinit$greater$1.apply(TestFramework.scala:336)
+	at sbt.TestFramework$$anon$3$$anonfun$$lessinit$greater$1.apply(TestFramework.scala:336)
+	at sbt.TestFunction.apply(TestFramework.scala:348)
+	at sbt.Tests$.$anonfun$toTask$1(Tests.scala:436)
+	at sbt.Tests$$$Lambda$3978/1292307271.apply(Unknown Source)
+	at sbt.std.Transform$$anon$3.$anonfun$apply$2(Transform.scala:47)
+	at sbt.std.Transform$$anon$3$$Lambda$2740/878506901.apply(Unknown Source)
+	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+	at sbt.Execute$$Lambda$2759/195767809.apply(Unknown Source)
+	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+	at sbt.Execute.work(Execute.scala:292)
+	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+	at sbt.Execute$$Lambda$2743/1552076111.apply(Unknown Source)
+	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+	at sbt.ConcurrentRestrictions$$anon$4$$Lambda$2755/1299661385.apply(Unknown Source)
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</failure>
+                    </testcase><testcase classname="Test2" name="matrixMustSum" time="0.11">
+                      
+                    </testcase>
+          <system-out><![CDATA[]]></system-out>
+          <system-err><![CDATA[]]></system-err>
+        </testsuite>

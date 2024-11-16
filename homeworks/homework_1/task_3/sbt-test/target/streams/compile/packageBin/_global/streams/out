@@ -1,0 +1,13 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging C:\Users\Dmitriy\IdeaProjects\-naumen.scala.course.2024.autumn\homeworks\homework_1\task_3\sbt-test\target\scala-3.5.1\sbt-test_3-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	hello.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Dmitriy\IdeaProjects\-naumen.scala.course.2024.autumn\homeworks\homework_1\task_3\sbt-test\target\scala-3.5.1\classes\hello.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	hello.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Dmitriy\IdeaProjects\-naumen.scala.course.2024.autumn\homeworks\homework_1\task_3\sbt-test\target\scala-3.5.1\classes\hello.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Dmitriy\IdeaProjects\-naumen.scala.course.2024.autumn\homeworks\homework_1\task_3\sbt-test\target\scala-3.5.1\classes\Main$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Dmitriy\IdeaProjects\-naumen.scala.course.2024.autumn\homeworks\homework_1\task_3\sbt-test\target\scala-3.5.1\classes\Main$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Dmitriy\IdeaProjects\-naumen.scala.course.2024.autumn\homeworks\homework_1\task_3\sbt-test\target\scala-3.5.1\classes\Main$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
