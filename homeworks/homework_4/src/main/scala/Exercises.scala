@@ -143,14 +143,38 @@ object SideEffectExercise {
 
 
     class PhoneServiceSafety(unsafePhoneService: SimplePhoneService) {
-        def findPhoneNumberSafe(num: String) = ???
+        def findPhoneNumberSafe(num: String): Option[PhoneRecord] = {
+            val phoneRecord = unsafePhoneService.findPhoneNumber(num)
+            Option(phoneRecord)
+        }
 
-        def addPhoneToBaseSafe(phone: String) = ???
+        def addPhoneToBaseSafe(phone: String): Either[String, Unit] = {
+            unsafePhoneService.addPhoneToBase(phone) match {
+                case true => Right(())
+                case false => Left("Failed to add phone to base")
+            }
+        }
 
-        def deletePhone(phone: String) = ???
+        def deletePhone(phone: PhoneRecord): Either[String, Unit] = {
+            unsafePhoneService.deletePhone(phone) match {
+                case true => Right(())
+                case false => Left("Failed to delete phone")
+            }
+        }
     }
 
     class ChangePhoneServiceSafe(phoneServiceSafety: PhoneServiceSafety) extends ChangePhoneService {
-        override def changePhone(oldPhone: String, newPhone: String): String = ???
+        override def changePhone(oldPhone: String, newPhone: String): String = {
+            val result = for {
+                oldPhoneRecord <- phoneServiceSafety.findPhoneNumberSafe(oldPhone)
+                _ <- phoneServiceSafety.deletePhone(oldPhoneRecord)
+                _ <- phoneServiceSafety.addPhoneToBaseSafe(newPhone)
+            } yield "ok"
+
+            result match {
+                case Some(_) => "ok"
+                case None => "Error in changing phone"
+            }
+        }
     }
 }
