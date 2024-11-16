@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+import scala.util.Random
 
 object Exercises {
 
@@ -22,10 +24,13 @@ object Exercises {
         result
     }
 
-    def findSumFunctional(items: List[Int], sumValue: Int) = {
-        (-1, -1)
-    }
-
+    def findSumFunctional(items: List[Int], sumValue: Int) = 
+        items
+        .zipWithIndex
+        .map(value => (items.indexWhere(_ == sumValue - value._1, value._2 - 1), value._2))
+        .filter(returnValue => returnValue._1 != -1 && returnValue._1 != returnValue._2)
+        .find(_ => true)
+        .getOrElse((-1, -1))
 
     /**
      * Задание №2
@@ -49,7 +54,22 @@ object Exercises {
     }
 
     def tailRecRecursion(items: List[Int]): Int = {
-        1
+        
+        @tailrec
+        def recursion(itemsRecursion: List[Int], index: Int, result: Int): Int = {
+            itemsRecursion match {
+                case Nil => result
+                case head :: tail =>
+                    if (head % 2 == 0) {
+                        recursion(tail, index - 1, head * result + index)
+                    } else {
+                        recursion(tail, index - 1, -1 * head * result + index)
+                    }
+
+            }
+        }
+
+        recursion(items.reverse, items.length, 1)
     }
 
     /**
@@ -60,7 +80,27 @@ object Exercises {
      */
 
     def functionalBinarySearch(items: List[Int], value: Int): Option[Int] = {
-        None
+        
+        @tailrec
+        def tailRecBinarySearch(itemsRecurcive: List[Int], leftBound: Int, rightBound: Int, foundNum: Int): Option[Int] = {
+            var mid = (leftBound + rightBound) / 2
+            itemsRecurcive(mid) match {
+                case `foundNum` => Some(mid)
+                case _ => leftBound > rightBound match {
+                    case true => None
+                    case false => if (itemsRecurcive(mid) < foundNum) {
+                        tailRecBinarySearch(itemsRecurcive, mid + 1, rightBound, foundNum)
+                    } else {
+                        tailRecBinarySearch(itemsRecurcive, leftBound, mid - 1, foundNum)
+                    }
+                }
+            }
+        }
+        if (items.length > 0) {
+            tailRecBinarySearch(items, 0, items.length - 1, value)
+        } else {
+            None
+        }
     }
 
     /**
@@ -72,10 +112,14 @@ object Exercises {
      */
 
     def generateNames(namesСount: Int): List[String] = {
+        val chars: IndexedSeq[Char] = ('a' to 'z')
         if (namesСount < 0) throw new Throwable("Invalid namesCount")
-        Nil
+        if (namesСount == 0) {
+            Nil
+        } else {
+           List.fill(namesСount)(Random.shuffle(chars).head.toUpper.toString() + Random.shuffle(chars).take(2 + Random.nextInt(10)).mkString)
+        }
     }
-
 }
 
 /**
@@ -111,14 +155,29 @@ object SideEffectExercise {
 
 
     class PhoneServiceSafety(unsafePhoneService: SimplePhoneService) {
-        def findPhoneNumberSafe(num: String) = ???
+        def findPhoneNumberSafe(num: String): Option[string] = Option(unsafePhoneService.findPhoneNumber(num))
 
-        def addPhoneToBaseSafe(phone: String) = ???
+        def addPhoneToBaseSafe(phone: String): Either[String, Unit] = 
+            if (checkPhoneNumber(phone)) {
+                Right(unsafePhoneService.addPhoneToBase(phone))
+            } else {
+                Left("Invalid phone string")
+            } 
 
-        def deletePhone(phone: String) = ???
+        def deletePhone(phone: String): Either[String, Unit] =
+            findPhoneNumberSafe(phone) match {
+                case Some(num) => Right(unsafePhoneService.deletePhone(num))
+                case _ => Left("Phone not found")
+            }
     }
 
     class ChangePhoneServiceSafe(phoneServiceSafety: PhoneServiceSafety) extends ChangePhoneService {
-        override def changePhone(oldPhone: String, newPhone: String): String = ???
+        override def changePhone(oldPhone: String, newPhone: String): String = {
+            phoneServiceSafety.findPhoneNumberSafe(oldPhone).map(phoneServiceSafety.deletePhone)
+            phoneServiceSafety.addPhoneToBaseSafe(newPhone) match {
+                case Right(_) => "ok"
+                case Left(fault) => fault
+            }
+        }
     }
 }
