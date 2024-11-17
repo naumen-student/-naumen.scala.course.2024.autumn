@@ -19,7 +19,8 @@ object Test extends TestSuite {
             'itWorks - {
                 (1 to 5).foreach { _ =>
                     val testList = generateRandomList(50)
-                    assert(Exercises.simpleRecursion(testList) == Exercises.tailRecRecursion(testList))
+                    assert(Exercises.simpleRecursion(testList) == Exercises.tailRecRecursion(testList)
+                    )
                 }
             }
             'longList - {
