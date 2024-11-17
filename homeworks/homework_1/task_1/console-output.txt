@@ -1,0 +1,32 @@
+scala> val name = "Antonova Liza"
+val name: String = Antonova Liza
+
+scala> val enGreeting = "Hello"
+val enGreeting: String = Hello
+
+scala> val spGreeting = "Hola"
+val spGreeting: String = Hola
+
+scala> val gerGreeting = "Guten tag"
+val gerGreeting: String = Guten tag
+
+scala> def greet(greeting: String, name: String): Unit = {println(s"$greeting Scala! This is $name")}
+def greet(greeting: String, name: String): Unit
+
+scala> greet(enGreeting, name)
+Hello Scala! This is Antonova Liza
+
+scala> greet(spGreeting, name)
+Hola Scala! This is Antonova Liza
+
+scala> greet(gerGreeting, name)
+Guten tag Scala! This is Antonova Liza
+
+scala> greet(gerGreeting, name.reverse)
+Guten tag Scala! This is aziL avonotnA
+
+scala> greet(spGreeting, name.reverse)
+Hola Scala! This is aziL avonotnA
+
+scala> greet(enGreeting, name.reverse)
+Hello Scala! This is aziL avonotnA
