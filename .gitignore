@@ -6,3 +6,6 @@
 *.jar*
 /homeworks/homework_2/null
 /homeworks/homework_2/src/test/scala/target
+/homeworks/homework_6/target/
+/homeworks/homework_6/project/
+/homeworks/homework_6/.bsp/
