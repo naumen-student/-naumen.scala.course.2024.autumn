@@ -10,17 +10,42 @@ import cats.implicits._
  */
 object Task2 extends App {
   case class RadiusVector(x: Int, y: Int)
+
   object RadiusVector {
-    implicit val monoid: Monoid[RadiusVector] = ???
-  }
-  case class DegreeAngle(angel: Double)
-  object DegreeAngle {
-    implicit val monoid: Monoid[DegreeAngle] = ???
+    implicit val monoid: Monoid[RadiusVector] = new Monoid[RadiusVector] {
+      override def empty: RadiusVector = new RadiusVector(0, 0);
+
+      override def combine(a: RadiusVector, b: RadiusVector): RadiusVector = new RadiusVector(a.x + b.x, a.y + b.y)
+    }
   }
 
-  case class SquareMatrix[A : Monoid](values: ((A, A, A), (A, A, A), (A, A, A)))
+  case class DegreeAngle(angel: Double)
+
+  object DegreeAngle {
+    implicit val monoid: Monoid[DegreeAngle] = new Monoid[DegreeAngle] {
+      override def empty: DegreeAngle = new DegreeAngle(0)
+
+      override def combine(x: DegreeAngle, y: DegreeAngle): DegreeAngle
+                                                            = new DegreeAngle(x.angel + y.angel % 360 + 360 % 360)
+      //                                              ангелов складываем, лол     ^        ^
+      // а еще на это задание тесты нестабильные, в них постояно угол оказывается отрицательным, что противоречит условию.
+    }
+  }
+
+  case class SquareMatrix[A: Monoid](values: ((A, A, A), (A, A, A), (A, A, A)))
+
   object SquareMatrix {
-    implicit def monoid[A: Monoid]: Monoid[SquareMatrix[A]] = ???
+    implicit def monoid[A: Monoid]: Monoid[SquareMatrix[A]] = new Monoid[SquareMatrix[A]] {
+      override def empty: SquareMatrix[A] = new SquareMatrix[A](
+        (Monoid[A].empty, Monoid[A].empty, Monoid[A].empty),
+        (Monoid[A].empty, Monoid[A].empty, Monoid[A].empty),
+        (Monoid[A].empty, Monoid[A].empty, Monoid[A].empty)
+      )
+
+      override def combine(x: SquareMatrix[A], y: SquareMatrix[A]): SquareMatrix[A] = new SquareMatrix[A](
+        x.values.combine(y.values)
+      )
+    }
   }
 
   val radiusVectors = Vector(RadiusVector(0, 0), RadiusVector(0, 1), RadiusVector(-1, 1))

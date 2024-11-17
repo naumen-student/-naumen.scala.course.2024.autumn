@@ -7,7 +7,7 @@ import scala.concurrent.duration.DurationInt
 
 /*
   Задание №3
-  Всё просто, нужно посчитать количество строк.
+  Всё просто, нужно посчитать количество строк.   <- тут ведь не строк а слов, иначе бред какой-то получается
   Реализуйте функцию countWords, которая принимает список строк.
   Обязательно использовать функцию mapReduce.
  */
@@ -25,8 +25,20 @@ object Task3 extends App {
   case class Count(word: String, count: Int)
   case class WordsCount(count: Seq[Count])
   object WordsCount {
-    implicit val monoid: Monoid[WordsCount] = ???
+    implicit val monoid: Monoid[WordsCount] = new Monoid[WordsCount] {
+      override def empty: WordsCount = new WordsCount(Seq.empty[Count])
+
+      override def combine(x: WordsCount, y: WordsCount): WordsCount = new WordsCount(
+        (x.count ++ y.count)
+          .groupBy(_.word)
+          .mapValues(a => a.map(_.count).sum)
+          .map(a => Count(a._1, a._2))
+          .toSeq
+      )
+    }
   }
 
-  def countWords(lines: Vector[String]): WordsCount = ???
+  def countWords(lines: Vector[String]): WordsCount = Await
+    .result(mapReduce(lines.flatMap(_.split(' ')))
+      (word => WordsCount(Seq(Count(word, 1)))), 1.second)
 }
