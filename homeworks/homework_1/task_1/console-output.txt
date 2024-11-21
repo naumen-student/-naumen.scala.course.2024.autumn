@@ -1,0 +1,30 @@
+Loading...
+Welcome to the Ammonite Repl 3.0.0-M2 (Scala 3.3.3 Java 22.0.2)
+@ val name = "Kolya Mozganov" 
+name: String = "Kolya Mozganov"
+
+@ println(s"Hello Scala! This is $name") 
+Hello Scala! This is Kolya Mozganov
+
+
+@ println(s"Hola Scala! This is $name") 
+Hola Scala! This is Kolya Mozganov
+
+
+@ println(s"Guten Tag Scala! This is $name") 
+Guten Tag Scala! This is Kolya Mozganov
+
+
+@ val reversedName = name.reverse 
+reversedName: String = "vonagzoM ayloK"
+
+@ println(s"Hello Scala! This is $reversedName") 
+Hello Scala! This is vonagzoM ayloK
+
+
+@ println(s"Hello Scala! This is $reversedName") 
+Hello Scala! This is vonagzoM ayloK
+
+
+@ println(s"Hello Scala! This is $reversedName".replace("Hello", "Hola")) 
+Hola Scala! This is vonagzoM ayloK
