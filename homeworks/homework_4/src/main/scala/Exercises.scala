@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+import scala.util.Random
 
 object Exercises {
 
@@ -23,7 +25,11 @@ object Exercises {
     }
 
     def findSumFunctional(items: List[Int], sumValue: Int) = {
-        (-1, -1)
+        items.zipWithIndex.combinations(2)
+          .collectFirst {
+              case List((a, j), (b, i)) if a + b == sumValue => (i, j)
+          }
+          .getOrElse((-1, -1))
     }
 
 
@@ -49,7 +55,14 @@ object Exercises {
     }
 
     def tailRecRecursion(items: List[Int]): Int = {
-        1
+        items.zipWithIndex.foldRight(1) {
+            case ((v, index), acc) =>
+                if (v % 2 == 0) {
+                    v * acc + index + 1
+                } else {
+                    -1 * v * acc + index + 1
+                }
+        }
     }
 
     /**
@@ -60,7 +73,21 @@ object Exercises {
      */
 
     def functionalBinarySearch(items: List[Int], value: Int): Option[Int] = {
-        None
+        @tailrec
+        def binarySearchHelper(low: Int, high: Int): Option[Int] = {
+            if (low > high) {
+                None
+            } else {
+                val mid = low + (high - low) / 2
+                items(mid) match {
+                    case midValue if midValue == value => Some(mid)
+                    case midValue if midValue < value => binarySearchHelper(mid + 1, high)
+                    case _ => binarySearchHelper(low, mid - 1)
+                }
+            }
+        }
+
+        binarySearchHelper(0, items.length - 1)
     }
 
     /**
@@ -73,7 +100,16 @@ object Exercises {
 
     def generateNames(namesСount: Int): List[String] = {
         if (namesСount < 0) throw new Throwable("Invalid namesCount")
-        Nil
+
+        val alphabet = 'A' to 'Z'
+
+        def generateName: String = {
+            val length = Random.nextInt(20) + 3
+            val name = (1 to length).map(_ => alphabet(Random.nextInt(alphabet.size))).mkString
+            name.head + name.tail.toLowerCase
+        }
+
+        List.fill(namesСount)(generateName)
     }
 
 }
@@ -96,7 +132,9 @@ object Exercises {
  */
 
 object SideEffectExercise {
+
     import Utils._
+    import scala.util.{Try, Success, Failure}
 
     class SimpleChangePhoneService(phoneService: SimplePhoneService) extends ChangePhoneService {
         override def changePhone(oldPhone: String, newPhone: String): String = {
@@ -109,16 +147,40 @@ object SideEffectExercise {
         }
     }
 
-
     class PhoneServiceSafety(unsafePhoneService: SimplePhoneService) {
-        def findPhoneNumberSafe(num: String) = ???
+        def findPhoneNumberSafe(num: String): Option[String] = {
+            Option(unsafePhoneService.findPhoneNumber(num))
+        }
 
-        def addPhoneToBaseSafe(phone: String) = ???
+        def addPhoneToBaseSafe(phone: String): Either[String, String] = {
+            Try(unsafePhoneService.addPhoneToBase(phone)) match {
+                case Success(_) => Right("ok")
+                case Failure(exception) => Left(exception.getMessage)
+            }
+        }
 
-        def deletePhone(phone: String) = ???
+        def deletePhoneSafe(phone: String): Either[String, String] = {
+            Try(unsafePhoneService.deletePhone(phone)) match {
+                case Success(_) => Right("ok")
+                case Failure(exception) => Left(exception.getMessage)
+            }
+        }
     }
 
     class ChangePhoneServiceSafe(phoneServiceSafety: PhoneServiceSafety) extends ChangePhoneService {
-        override def changePhone(oldPhone: String, newPhone: String): String = ???
+        override def changePhone(oldPhone: String, newPhone: String): String = {
+            phoneServiceSafety.findPhoneNumberSafe(oldPhone) match {
+                case Some(_) =>
+                    phoneServiceSafety.deletePhoneSafe(oldPhone) match {
+                        case Right(_) =>
+                            phoneServiceSafety.addPhoneToBaseSafe(newPhone) match {
+                                case Right(_) => "ok"
+                                case Left(error) => error
+                            }
+                        case Left(error) => error
+                    }
+                case None => "Old phone number not found"
+            }
+        }
     }
 }
