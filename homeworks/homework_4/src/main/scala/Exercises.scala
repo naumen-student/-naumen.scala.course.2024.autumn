@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+import scala.util.Random
 
 object Exercises {
 
@@ -22,8 +24,12 @@ object Exercises {
         result
     }
 
-    def findSumFunctional(items: List[Int], sumValue: Int) = {
-        (-1, -1)
+    def findSumFunctional(items: List[Int], sumValue: Int): (Int, Int) = {
+        items.zipWithIndex.combinations(2)
+          .collectFirst {
+              case List((a, j), (b, i)) if a + b == sumValue => (i, j)
+          }
+          .getOrElse((-1, -1))
     }
 
 
@@ -48,8 +54,19 @@ object Exercises {
         }
     }
 
-    def tailRecRecursion(items: List[Int]): Int = {
-        1
+    def tailRecRecursion(items: List[Int], accumulator: Int = 1, index: Int = 1): Int = {
+        @tailrec
+        def run(items: List[Int], index: Int, acc: Int = 1): Int = {
+            items match {
+                case Nil => acc
+                case head :: tail =>
+                    if (head % 2 == 0) run(tail, index - 1, head * acc + index)
+                    else run(tail, index - 1, -head * acc + index)
+            }
+        }
+
+        run(items.reverse, items.size)
+
     }
 
     /**
@@ -60,7 +77,20 @@ object Exercises {
      */
 
     def functionalBinarySearch(items: List[Int], value: Int): Option[Int] = {
-        None
+        @tailrec
+        def search(list: List[Int], value: Int, left: Int, right: Int): Option[Int] = {
+            if (left > right) None
+            else {
+                val middle = left + (right - left) / 2
+                list(middle) match {
+                    case x if x == value => Some(middle)
+                    case x if x < value => search(list, value, middle + 1, right)
+                    case x if x > value => search(list, value, left, middle - 1)
+                }
+            }
+        }
+        if (items.isEmpty) None
+        else search(items, value, 0, items.size - 1)
     }
 
     /**
@@ -71,9 +101,15 @@ object Exercises {
      * Именем является строка, не содержащая иных символов, кроме буквенных, а также начинающаяся с заглавной буквы.
      */
 
-    def generateNames(namesСount: Int): List[String] = {
-        if (namesСount < 0) throw new Throwable("Invalid namesCount")
-        Nil
+    def generateNames(namesCount: Int): List[String] = {
+        if (namesCount < 0) throw new IllegalArgumentException("Invalid namesCount")
+        def generateName(): String = {
+            val alphabet = ('A' to 'Z') ++ ('a' to 'z')
+            val randomLength = Random.nextInt(10) + 3
+            val name = (for (_ <- 1 to randomLength) yield alphabet(Random.nextInt(alphabet.size))).mkString
+            name.head.toUpper + name.tail.toLowerCase
+        }
+        (1 to namesCount).map(_ => generateName()).toList
     }
 
 }
