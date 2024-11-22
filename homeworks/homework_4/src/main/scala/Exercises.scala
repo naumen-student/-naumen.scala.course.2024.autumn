@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+import scala.util.{Failure, Success, Try}
 
 object Exercises {
 
@@ -23,7 +25,7 @@ object Exercises {
     }
 
     def findSumFunctional(items: List[Int], sumValue: Int) = {
-        (-1, -1)
+        items.zipWithIndex.flatMap { case (x, i) => items.zipWithIndex.map { case (y, j) => ((i, j), (x, y)) }.toMap }.map { case (c, e) => (c, e._1 + e._2) }.filter { case (c, e) => e == sumValue && c._1 != c._2 }.lastOption.map(elem => elem._1).getOrElse((-1, -1))
     }
 
 
@@ -48,8 +50,17 @@ object Exercises {
         }
     }
 
-    def tailRecRecursion(items: List[Int]): Int = {
-        1
+    @tailrec
+    def tailRecRecursion(items: List[Int], index: Int = 1, sum: Int = 0, m: Int = 1): Int = {
+        items match {
+            case head :: tail =>
+                if (head % 2 == 0) {
+                    tailRecRecursion(tail, index + 1, sum + m * index, m * head)
+                } else {
+                    tailRecRecursion(tail, index + 1, sum + m * index, -m * head)
+                }
+            case _ => sum + m
+        }
     }
 
     /**
@@ -60,7 +71,26 @@ object Exercises {
      */
 
     def functionalBinarySearch(items: List[Int], value: Int): Option[Int] = {
-        None
+        @tailrec
+        def RecSearch(start: Int = 0, end: Int = items.length - 1): Option[Int] = {
+            if (start > end)
+                None
+            else if ( end== start) {
+                if (items(start) == value)
+                    Some(start)
+                else
+                    None
+            }
+            else {
+                val middle = (start + end + 1) / 2
+                if (value < items(middle))
+                    RecSearch(start, middle-1)
+                else
+                    RecSearch(middle, end)
+            }
+        }
+
+        RecSearch()
     }
 
     /**
@@ -73,9 +103,9 @@ object Exercises {
 
     def generateNames(namesСount: Int): List[String] = {
         if (namesСount < 0) throw new Throwable("Invalid namesCount")
-        Nil
+        val alphabet = 'a' to 'z'
+        (for(i <-  1 to namesСount) yield List.fill(scala.util.Random.nextInt(5)+3)(alphabet(scala.util.Random.nextInt(alphabet.size))).mkString.capitalize).toList
     }
-
 }
 
 /**
@@ -96,6 +126,7 @@ object Exercises {
  */
 
 object SideEffectExercise {
+
     import Utils._
 
     class SimpleChangePhoneService(phoneService: SimplePhoneService) extends ChangePhoneService {
@@ -111,14 +142,41 @@ object SideEffectExercise {
 
 
     class PhoneServiceSafety(unsafePhoneService: SimplePhoneService) {
-        def findPhoneNumberSafe(num: String) = ???
+        def findPhoneNumberSafe(num: String) :Option[String]= Option(unsafePhoneService.findPhoneNumber(num))
 
-        def addPhoneToBaseSafe(phone: String) = ???
+        def addPhoneToBaseSafe(phone: String) : Either[Throwable,Unit] ={
+            try{
+                unsafePhoneService.addPhoneToBase(phone)
+                Right()
+            }
+            catch   {
+                case e : InternalError => Left(e)
+            }
+        }
 
-        def deletePhone(phone: String) = ???
+        def deletePhone(phone: String):Either[Throwable,Unit] = {
+            try{
+                unsafePhoneService.deletePhone(phone)
+                Right()
+            }
+            catch{
+                case e: Throwable => Left(e)
+            }
+        }
     }
 
     class ChangePhoneServiceSafe(phoneServiceSafety: PhoneServiceSafety) extends ChangePhoneService {
-        override def changePhone(oldPhone: String, newPhone: String): String = ???
+        override def changePhone(oldPhone: String, newPhone: String): String = {
+            val findRes = phoneServiceSafety.findPhoneNumberSafe(oldPhone)
+            val res = {
+                if (findRes.isDefined) {
+                    val deleteRes = phoneServiceSafety.deletePhone(oldPhone)
+                    if (deleteRes.isLeft)
+                        deleteRes
+                }
+                phoneServiceSafety.addPhoneToBaseSafe(newPhone)
+            }
+            res.fold(err => err.getMessage,res=>"ok")
+        }
     }
 }
