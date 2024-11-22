@@ -1,21 +1,51 @@
-import utest._
+import cats._
+import cats.implicits._
 
-import scala.util.Random
+import scala.concurrent.{Await, Future}
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.duration.DurationInt
 
-object Test3 extends TestSuite {
-  override def tests: Tests = Tests {
-    import Task3._
+/*
+  Задание №3
+  Всё просто, нужно посчитать количество строк.
+  Реализуйте функцию countWords, которая принимает список строк.
+  Обязательно использовать функцию mapReduce.
+ */
+object Task3 extends App {
+  def mapReduce[A, B: Monoid](values: Vector[A])(func: A => B): Future[B] = {
+    val numCores = Runtime.getRuntime.availableProcessors
+    val groupSize = (1.0 * values.size / numCores).ceil.toInt
+    values
+      .grouped(groupSize)
+      .toVector
+      .traverse(group => Future(group.foldMap(func)))
+      .map(_.combineAll)
+  }
 
-    'wordsMustBeCounted - (1 to 5).foreach { _ =>
-      val words = Vector.fill(100)(java.util.UUID.randomUUID().toString.replace("-", ""))
-      val counts = Vector.fill(100)(Random.nextInt(200)).map(_ + 1) // исключаем 0
-      val expected = WordsCount(words.zip(counts).map { case (w, c) => Count(w, c) })
+  case class Count(word: String, count: Int)
+  case class WordsCount(count: Seq[Count])
+  object WordsCount {
+    implicit val monoid: Monoid[WordsCount] = new Monoid[WordsCount] {
+      def empty: WordsCount = WordsCount(Seq.empty)
 
-      val allWords = words.zip(counts).flatMap { case (word, count) => Vector.fill(count)(word) }
-      val lines = Random.shuffle(allWords).grouped(50).map(_.mkString(" ")).toVector
-      val result = countWords(lines)
+      def combine(x: WordsCount, y: WordsCount): WordsCount = {
+        val result = (x.count ++ y.count)
+          .groupBy(_.word)
+          .map {
+          case (word, counts) => Count(word, counts
+            .map(_.count)
+            .sum)
+        }
 
-      expected.count.foreach(x => assert(result.count.contains(x)))
+        WordsCount(result.toSeq)
+      }
     }
+  }
+
+  def countWords(lines: Vector[String]): WordsCount = {
+    Await.result(mapReduce[String, WordsCount](lines)(line => {
+      val words = line.split("""\s+""").toVector
+      WordsCount(words.map(word => Count(word, 1)))
+    }), 1.seconds)
   }
 }
