@@ -1,0 +1,23 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Data\scala\-naumen.scala.course.2024.autumn\homeworks\homework_5\src\main\scala\Task4.scala:39:53: object creation impossible, since method raiseError in trait MonadError of type [A](fa: Task4.EIO[E,A])(error: => E)Task4.EIO[E,A] is not defined[0m
+[0m[[0m[31merror[0m] [0m[0m    implicit def monad[E]: MonadError[EIO, E] = new MonadError[EIO, E] {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Data\scala\-naumen.scala.course.2024.autumn\homeworks\homework_5\src\main\scala\Task4.scala:47:20: method raiseError overrides nothing.[0m
+[0m[[0m[31merror[0m] [0m[0mNote: the super classes of <$anon: Task4.MonadError[Task4.EIO,E]> contain the following, non final members named raiseError:[0m
+[0m[[0m[31merror[0m] [0m[0mdef raiseError[A](fa: Task4.EIO[E,A])(error: => E): Task4.EIO[E,A][0m
+[0m[[0m[31merror[0m] [0m[0m      override def raiseError[A](error: => E): EIO[E, A] = EIO(Left(error))[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Data\scala\-naumen.scala.course.2024.autumn\homeworks\homework_5\src\main\scala\Task5.scala:38:66: object creation impossible, since method raiseError in trait MonadError of type [A](fa: Task5.MyEither[E,A])(error: => E)Task5.MyEither[E,A] is not defined[0m
+[0m[[0m[31merror[0m] [0m[0m    implicit def myEitherMonad[E]: MonadError[MyEither, E] = new MonadError[MyEither, E] {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Data\scala\-naumen.scala.course.2024.autumn\homeworks\homework_5\src\main\scala\Task5.scala:46:20: method tailRecM overrides nothing[0m
+[0m[[0m[31merror[0m] [0m[0m      override def tailRecM[A, B](a: A)(f: A => MyEither[E, Either[A, B]]): MyEither[E, B] = f(a) match {[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Data\scala\-naumen.scala.course.2024.autumn\homeworks\homework_5\src\main\scala\Task5.scala:52:20: method raiseError overrides nothing.[0m
+[0m[[0m[31merror[0m] [0m[0mNote: the super classes of <$anon: Task4.MonadError[Task5.MyEither,E]> contain the following, non final members named raiseError:[0m
+[0m[[0m[31merror[0m] [0m[0mdef raiseError[A](fa: Task5.MyEither[E,A])(error: => E): Task5.MyEither[E,A][0m
+[0m[[0m[31merror[0m] [0m[0m      override def raiseError[A](error: => E): MyEither[E, A] = MyLeft(error)[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Data\scala\-naumen.scala.course.2024.autumn\homeworks\homework_5\src\main\scala\Task5.scala:54:20: method handleErrorWith overrides nothing[0m
+[0m[[0m[31merror[0m] [0m[0m      override def handleErrorWith[A](fa: MyEither[E, A])(f: E => MyEither[E, A]): MyEither[E, A] = fa match {[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m6 errors found[0m
