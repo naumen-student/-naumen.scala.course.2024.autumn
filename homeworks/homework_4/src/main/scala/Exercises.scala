@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+import scala.util.Random
 
 object Exercises {
 
@@ -23,7 +25,12 @@ object Exercises {
     }
 
     def findSumFunctional(items: List[Int], sumValue: Int) = {
-        (-1, -1)
+        val indexedItems = items.zipWithIndex
+        val result = for {
+            (value1, index1) <- indexedItems
+            (value2, index2) <- indexedItems if index1 != index2 && value1 + value2 == sumValue
+        } yield (index1, index2)
+        result.lastOption.getOrElse((-1, -1))
     }
 
 
@@ -49,7 +56,21 @@ object Exercises {
     }
 
     def tailRecRecursion(items: List[Int]): Int = {
-        1
+        @tailrec
+        def innerRecursion(items: List[Int], index: Int, accumulator: Int): Int = {
+            items match {
+                case head :: tail =>
+                    val newAccumulator = if (head % 2 == 0) {
+                        head * accumulator + index
+                    } else {
+                        -1 * head * accumulator + index
+                    }
+                    innerRecursion(tail, index - 1, newAccumulator)
+                case _ => accumulator
+            }
+        }
+
+        innerRecursion(items.reverse, items.size, 1)
     }
 
     /**
@@ -60,7 +81,21 @@ object Exercises {
      */
 
     def functionalBinarySearch(items: List[Int], value: Int): Option[Int] = {
-        None
+        @tailrec
+        def binarySearch(low: Int, high: Int): Option[Int] = {
+            if (low > high) {
+                None
+            } else {
+                val mid = low + (high - low) / 2
+                items(mid) match {
+                    case x if x == value => Some(mid)
+                    case x if x < value => binarySearch(mid + 1, high)
+                    case _ => binarySearch(low, mid - 1)
+                }
+            }
+        }
+
+        binarySearch(0, items.length - 1) // Запускаем поиск с полных границ
     }
 
     /**
@@ -73,7 +108,23 @@ object Exercises {
 
     def generateNames(namesСount: Int): List[String] = {
         if (namesСount < 0) throw new Throwable("Invalid namesCount")
-        Nil
+
+        val letters = 'a' to 'z'
+        val firstLetters = 'A' to 'Z'
+
+        def generateSingleName(): String = {
+            val name = (1 to 4).map(_ => letters(Random.nextInt(letters.length))).mkString
+            val firstLetter = firstLetters(Random.nextInt(26))
+            firstLetter + name
+        }
+
+        @tailrec
+        def generateNamesList(count: Int, acc: List[String]): List[String] = {
+            if (count <= 0) acc
+            else generateNamesList(count - 1, generateSingleName() :: acc)
+        }
+
+        generateNamesList(namesСount, Nil)
     }
 
 }
@@ -96,6 +147,7 @@ object Exercises {
  */
 
 object SideEffectExercise {
+
     import Utils._
 
     class SimpleChangePhoneService(phoneService: SimplePhoneService) extends ChangePhoneService {
@@ -111,14 +163,47 @@ object SideEffectExercise {
 
 
     class PhoneServiceSafety(unsafePhoneService: SimplePhoneService) {
-        def findPhoneNumberSafe(num: String) = ???
+        def findPhoneNumberSafe(num: String) = {
+            Option(unsafePhoneService.findPhoneNumber(num))
+        }
 
-        def addPhoneToBaseSafe(phone: String) = ???
+        def addPhoneToBaseSafe(phone: String) = {
+            try {
+                unsafePhoneService.addPhoneToBase(phone)
+                Right("ok")
+            } catch {
+                case e: Exception => Left(s"Error adding phone: ${e.getMessage}")
+            }
+        }
 
-        def deletePhone(phone: String) = ???
+        def deletePhoneSafe(phone: String) = {
+            val phoneRecord = findPhoneNumberSafe(phone)
+            phoneRecord match {
+                case Some(record) =>
+                    try {
+                        unsafePhoneService.deletePhone(record)
+                        Right("ok")
+                    } catch {
+                        case e: Exception => Left(s"Error deleting phone: ${e.getMessage}")
+                    }
+                case None => Left("Phone not found")
+            }
+        }
     }
 
     class ChangePhoneServiceSafe(phoneServiceSafety: PhoneServiceSafety) extends ChangePhoneService {
-        override def changePhone(oldPhone: String, newPhone: String): String = ???
+        override def changePhone(oldPhone: String, newPhone: String): String = {
+            val deleteResult = phoneServiceSafety.deletePhoneSafe(oldPhone)
+            deleteResult match {
+                case Left(error) => return error
+                case Right(_) =>
+            }
+
+            val addResult = phoneServiceSafety.addPhoneToBaseSafe(newPhone)
+            addResult match {
+                case Left(error) => error
+                case Right(_) => "ok"
+            }
+        }
     }
 }
