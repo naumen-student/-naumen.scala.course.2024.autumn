@@ -51,13 +51,71 @@ object Test extends TestSuite {
                 val names = Exercises.generateNames(namesCount)
                 assert(
                     names.forall(_.matches("([A-Z]|[А-Я])([a-z]|[а-я])*")) &&
-                        names.size == namesCount &&
-                        names.distinct.size == namesCount
+                      names.size == namesCount &&
+                      names.distinct.size == namesCount
                 )
             }
 
             'empty - {
                 assert(Exercises.generateNames(0).isEmpty)
+            }
+        }
+        'SideEffectExercise - {
+            import Utils._
+            import SideEffectExercise._
+            import scala.collection.mutable
+
+            def getPhoneServiceSafety(phones: mutable.ListBuffer[String]): PhoneServiceSafety = {
+                val phoneBase = new PhoneBase(phones)
+                val simplePhoneService = new SimplePhoneService(phoneBase)
+                new PhoneServiceSafety(simplePhoneService)
+            }
+
+            'PhoneServiceSafety - {
+                'findPhoneNumberSafe - {
+                    'nonEmpty - {
+                        val phoneServiceSafety = getPhoneServiceSafety(mutable.ListBuffer("71234567890"))
+                        assert(phoneServiceSafety.findPhoneNumberSafe("71234567890").contains("71234567890"))
+                    }
+
+                    'empty - {
+                        val phoneServiceSafety = getPhoneServiceSafety(mutable.ListBuffer.empty)
+                        assert(phoneServiceSafety.findPhoneNumberSafe("99999999999").isEmpty)
+                    }
+                }
+                'addPhoneToBaseSafe - {
+                    'added - {
+                        val phoneServiceSafety = getPhoneServiceSafety(mutable.ListBuffer.empty)
+                        assert(phoneServiceSafety.addPhoneToBaseSafe("12345678901").isRight)
+                        assert(phoneServiceSafety.findPhoneNumberSafe("12345678901").nonEmpty)
+                    }
+                    'nonAdded - {
+                        val phoneServiceSafety = getPhoneServiceSafety(mutable.ListBuffer.empty)
+                        assert(phoneServiceSafety.addPhoneToBaseSafe("InvalidPhone").isLeft)
+                    }
+                }
+                'deletePhone - {
+                    val phoneServiceSafety = getPhoneServiceSafety(mutable.ListBuffer("80987654321"))
+                    phoneServiceSafety.deletePhone("80987654321")
+                    assert(phoneServiceSafety.findPhoneNumberSafe("80987654321").isEmpty)
+                }
+            }
+            'ChangePhoneServiceSafe - {
+                'okIfPhoneDoseNotExist - {
+                    val phoneServiceSafety = getPhoneServiceSafety(mutable.ListBuffer.empty)
+                    val changePhoneServiceSafe = new ChangePhoneServiceSafe(phoneServiceSafety)
+                    assert(changePhoneServiceSafe.changePhone("80987654321", "12345678901") == "ok")
+                }
+                'okIfPhoneAlredyExist - {
+                    val phoneServiceSafety = getPhoneServiceSafety(mutable.ListBuffer("80987654321"))
+                    val changePhoneServiceSafe = new ChangePhoneServiceSafe(phoneServiceSafety)
+                    assert(changePhoneServiceSafe.changePhone("80987654321", "12345678901") == "ok")
+                }
+                'failedIfNewPhoneInvalid - {
+                    val phoneServiceSafety = getPhoneServiceSafety(mutable.ListBuffer.empty)
+                    val changePhoneServiceSafe = new ChangePhoneServiceSafe(phoneServiceSafety)
+                    assert(changePhoneServiceSafe.changePhone("80987654321", "InvalidNumber") == "Failed to change the number: Invalid phone string")
+                }
             }
         }
     }
