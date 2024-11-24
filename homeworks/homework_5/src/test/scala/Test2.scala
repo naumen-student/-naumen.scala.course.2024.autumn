@@ -17,6 +17,7 @@ object Test2 extends TestSuite {
     'angleMustSum - (1 to 5).foreach { _ =>
       val angles = Vector.fill(50)(DegreeAngle(Random.nextInt))
       val result = angles.map(_.angel).sum % 360
+      val angle = angles.combineAll
       assert(angles.combineAll == DegreeAngle(result))
     }
     'matrixMustSum - (1 to 5).foreach { _ =>
