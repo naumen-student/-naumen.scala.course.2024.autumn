@@ -57,7 +57,6 @@ object Task5 extends App {
 		}
 	}
 
-	// Синтаксический сахар для удобства работы с MyEither
 	object MyEitherSyntax {
 		implicit class MyEitherOps[E, A](val either: MyEither[E, A]) {
 			def flatMap[B](f: A => MyEither[E, B]): MyEither[E, B] =
