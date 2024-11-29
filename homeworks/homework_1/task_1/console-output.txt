@@ -1,0 +1,32 @@
+PS C:\Users\Лада> scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_421).
+Type in expressions for evaluation. Or try :help.
+
+scala> var name = "Lada"
+name: String = Lada
+
+scala> println("Hello Scala! This is ${name}")
+Hello Scala! This is ${name}
+
+scala> println(s"Hello Scala! This is ${name}")
+Hello Scala! This is Lada
+
+scala> println(s"Hola Scala! This is ${name}")
+Hola Scala! This is Lada
+
+scala> println(s"Guten tag Scala! This is ${name}")
+Guten tag Scala! This is Lada
+
+scala> var reverseName = "Lada Kuzmina".reverse
+reverseName: String = animzuK adaL
+
+scala> println(s"Hello Scala! This is ${reverseName}")
+Hello Scala! This is animzuK adaL
+
+scala> println(s"Hola Scala! This is ${reverseName}")
+Hola Scala! This is animzuK adaL
+
+scala> println(s"Guten tag Scala! This is ${reverseName}")
+Guten tag Scala! This is animzuK adaL
+
+scala>
