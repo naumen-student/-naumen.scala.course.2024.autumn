@@ -1,0 +1,23 @@
+scala> val name = "Anna Vasileva"
+name: String = Anna Vasileva
+
+scala> println(s"Hello Scala! This is $name")
+Hello Scala! This is Anna Vasileva
+
+scala> val greetings = List("Hola", "Guten tag")
+greetings: List[String] = List(Hola, Guten tag)
+
+scala> for (greeting <- greetings) {
+     | println(s"$greeting Scala! This is $name")
+     | }
+Hola Scala! This is Anna Vasileva
+Guten tag Scala! This is Anna Vasileva
+
+scala> val reversedName = name.reverse
+reversedName: String = avelisaV annA
+
+scala> for (greeting <- greetings) {
+     | println(s"$greeting Scala! This is $reversedName")
+     | }
+Hola Scala! This is avelisaV annA
+Guten tag Scala! This is avelisaV annA
