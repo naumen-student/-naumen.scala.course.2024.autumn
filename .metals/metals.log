@@ -1,0 +1,479 @@
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@67e8cfee]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@406a9e37]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@67e8cfee]
+2024.10.07 19:54:03 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.10.07 19:54:05 INFO  no build target found for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.07 19:54:06 INFO  no build target found for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.07 19:54:11 INFO  Running List(C:\Users\79193\AppData\Local\Coursier\data\bin\scala-cli.BAT, setup-ide, C:\Users\79193\-naumen.scala.course.2024.autumn)
+2024.10.07 19:54:14 INFO  Attempting to connect to the build server...
+2024.10.07 19:54:14 INFO  Running BSP server List(C:\Users\79193\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\79193\-naumen.scala.course.2024.autumn\.scala-build\ide-options-v2.json, --json-launcher-options, C:\Users\79193\-naumen.scala.course.2024.autumn\.scala-build\ide-launcher-options.json, --envs-file, C:\Users\79193\-naumen.scala.course.2024.autumn\.scala-build\ide-envs.json, C:\Users\79193\-naumen.scala.course.2024.autumn)
+2024.10.07 19:54:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\79193\-naumen.scala.course.2024.autumn\.metals\bsp.trace.json or C:\Users\79193\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.10.07 19:54:17 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/bloop-frontend_2.12/2.0.2/bloop-frontend_2.12-2.0.2.pom
+2024.10.07 19:54:17 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/bloop-frontend_2.12/2.0.2/bloop-frontend_2.12-2.0.2.pom
+2024.10.07 19:54:17 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.20/scala-library-2.12.20.pom
+2024.10.07 19:54:17 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.5.8/logback-classic-1.5.8.pom
+2024.10.07 19:54:17 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/2.0.3/bloop-config_2.12-2.0.3.pom
+2024.10.07 19:54:17 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.20/scala-library-2.12.20.pom
+2024.10.07 19:54:17 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/bloop-shared_2.12/2.0.2/bloop-shared_2.12-2.0.2.pom
+2024.10.07 19:54:17 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/bloop-backend_2.12/2.0.2/bloop-backend_2.12-2.0.2.pom
+2024.10.07 19:54:17 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.5.8/logback-classic-1.5.8.pom
+2024.10.07 19:54:18 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/bloop-shared_2.12/2.0.2/bloop-shared_2.12-2.0.2.pom
+2024.10.07 19:54:18 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/scala-debug-adapter_2.12/4.2.1/scala-debug-adapter_2.12-4.2.1.pom
+2024.10.07 19:54:18 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/2.0.3/bloop-config_2.12-2.0.3.pom
+2024.10.07 19:54:18 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/libdaemon_2.12/0.0.12/libdaemon_2.12-0.0.12.pom
+2024.10.07 19:54:18 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/bloop-backend_2.12/2.0.2/bloop-backend_2.12-2.0.2.pom
+2024.10.07 19:54:18 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/scala-debug-adapter_2.12/4.2.1/scala-debug-adapter_2.12-4.2.1.pom
+2024.10.07 19:54:18 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/libdaemon_2.12/0.0.12/libdaemon_2.12-0.0.12.pom
+2024.10.07 19:54:18 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.5.8/logback-parent-1.5.8.pom
+2024.10.07 19:54:18 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.5.8/logback-parent-1.5.8.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.5.8/logback-core-1.5.8.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/com-microsoft-java-debug-core/0.34.0+32/com-microsoft-java-debug-core-0.34.0+32.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scalameta/parsers_2.12/4.9.9/parsers_2.12-4.9.9.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.15/slf4j-api-2.0.15.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloading https://repo1.maven.org/maven2/io/get-coursier/interface/1.0.21/interface-1.0.21.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scalameta/parsers_2.12/4.9.9/parsers_2.12-4.9.9.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.15/slf4j-api-2.0.15.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.20/scala-reflect-2.12.20.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.5.8/logback-core-1.5.8.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/com-microsoft-java-debug-core/0.34.0+32/com-microsoft-java-debug-core-0.34.0+32.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/io/get-coursier/interface/1.0.21/interface-1.0.21.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.20/scala-reflect-2.12.20.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-parent/2.0.15/slf4j-parent-2.0.15.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/slf4j/slf4j-parent/2.0.15/slf4j-parent-2.0.15.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-bom/2.0.15/slf4j-bom-2.0.15.pom
+2024.10.07 19:54:20 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/slf4j/slf4j-bom/2.0.15/slf4j-bom-2.0.15.pom
+2024.10.07 19:54:22 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.pom
+2024.10.07 19:54:22 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scalameta/trees_2.12/4.9.9/trees_2.12-4.9.9.pom
+2024.10.07 19:54:22 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.pom
+2024.10.07 19:54:22 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scalameta/trees_2.12/4.9.9/trees_2.12-4.9.9.pom
+2024.10.07 19:54:22 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/apache/commons/commons-parent/73/commons-parent-73.pom
+2024.10.07 19:54:22 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/apache/commons/commons-parent/73/commons-parent-73.pom
+2024.10.07 19:54:22 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/apache/apache/33/apache-33.pom
+2024.10.07 19:54:22 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/apache/apache/33/apache-33.pom
+2024.10.07 19:54:22 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/junit/junit-bom/5.11.0/junit-bom-5.11.0.pom
+2024.10.07 19:54:22 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/junit/junit-bom/5.11.0/junit-bom-5.11.0.pom
+2024.10.07 19:54:24 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.20/scala-compiler-2.12.20.pom
+2024.10.07 19:54:24 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scalameta/common_2.12/4.9.9/common_2.12-4.9.9.pom
+2024.10.07 19:54:24 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.20/scala-compiler-2.12.20.pom
+2024.10.07 19:54:24 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scalameta/common_2.12/4.9.9/common_2.12-4.9.9.pom
+2024.10.07 19:54:26 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.15/slf4j-api-2.0.15.jar
+2024.10.07 19:54:26 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/bloop-backend_2.12/2.0.2/bloop-backend_2.12-2.0.2.jar
+2024.10.07 19:54:26 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/bloop-shared_2.12/2.0.2/bloop-shared_2.12-2.0.2.jar
+2024.10.07 19:54:26 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scalameta/common_2.12/4.9.9/common_2.12-4.9.9.jar
+2024.10.07 19:54:26 INFO  BSP server: Downloading https://repo1.maven.org/maven2/io/get-coursier/interface/1.0.21/interface-1.0.21.jar
+2024.10.07 19:54:26 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/libdaemon_2.12/0.0.12/libdaemon_2.12-0.0.12.jar
+2024.10.07 19:54:26 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.15/slf4j-api-2.0.15.jar
+2024.10.07 19:54:26 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scalameta/parsers_2.12/4.9.9/parsers_2.12-4.9.9.jar
+2024.10.07 19:54:26 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/libdaemon_2.12/0.0.12/libdaemon_2.12-0.0.12.jar
+2024.10.07 19:54:26 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.20/scala-compiler-2.12.20.jar
+2024.10.07 19:54:27 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/bloop-shared_2.12/2.0.2/bloop-shared_2.12-2.0.2.jar
+2024.10.07 19:54:27 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/scala-debug-adapter_2.12/4.2.1/scala-debug-adapter_2.12-4.2.1.jar
+2024.10.07 19:54:27 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/bloop-backend_2.12/2.0.2/bloop-backend_2.12-2.0.2.jar
+2024.10.07 19:54:27 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar
+2024.10.07 19:54:29 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/scala-debug-adapter_2.12/4.2.1/scala-debug-adapter_2.12-4.2.1.jar
+2024.10.07 19:54:29 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/2.0.3/bloop-config_2.12-2.0.3.jar
+2024.10.07 19:54:29 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/2.0.3/bloop-config_2.12-2.0.3.jar
+2024.10.07 19:54:29 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/com-microsoft-java-debug-core/0.34.0+32/com-microsoft-java-debug-core-0.34.0+32.jar
+2024.10.07 19:54:29 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scalameta/parsers_2.12/4.9.9/parsers_2.12-4.9.9.jar
+2024.10.07 19:54:29 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scalameta/trees_2.12/4.9.9/trees_2.12-4.9.9.jar
+2024.10.07 19:54:30 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar
+2024.10.07 19:54:30 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.20/scala-reflect-2.12.20.jar
+2024.10.07 19:54:30 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/com-microsoft-java-debug-core/0.34.0+32/com-microsoft-java-debug-core-0.34.0+32.jar
+2024.10.07 19:54:30 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.20/scala-library-2.12.20.jar
+2024.10.07 19:54:32 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scalameta/common_2.12/4.9.9/common_2.12-4.9.9.jar
+2024.10.07 19:54:32 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/epfl/scala/bloop-frontend_2.12/2.0.2/bloop-frontend_2.12-2.0.2.jar
+2024.10.07 19:54:34 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/epfl/scala/bloop-frontend_2.12/2.0.2/bloop-frontend_2.12-2.0.2.jar
+2024.10.07 19:54:34 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.5.8/logback-core-1.5.8.jar
+2024.10.07 19:54:34 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.5.8/logback-core-1.5.8.jar
+2024.10.07 19:54:34 INFO  BSP server: Downloading https://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.5.8/logback-classic-1.5.8.jar
+2024.10.07 19:54:34 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.20/scala-reflect-2.12.20.jar
+2024.10.07 19:54:36 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.5.8/logback-classic-1.5.8.jar
+2024.10.07 19:54:36 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.20/scala-library-2.12.20.jar
+2024.10.07 19:54:39 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scalameta/trees_2.12/4.9.9/trees_2.12-4.9.9.jar
+2024.10.07 19:54:39 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/io/get-coursier/interface/1.0.21/interface-1.0.21.jar
+2024.10.07 19:54:42 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.20/scala-compiler-2.12.20.jar
+2024.10.07 19:54:42 INFO  BSP server: Starting compilation server
+2024.10.07 19:54:53 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala3-sbt-bridge/3.5.1/scala3-sbt-bridge-3.5.1.pom
+2024.10.07 19:54:53 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala3-sbt-bridge/3.5.1/scala3-sbt-bridge-3.5.1.pom
+2024.10.07 19:54:53 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala3-sbt-bridge/3.5.1/scala3-sbt-bridge-3.5.1.jar
+2024.10.07 19:54:53 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala3-sbt-bridge/3.5.1/scala3-sbt-bridge-3.5.1.jar
+2024.10.07 19:54:54 INFO  time: Connected to build server in 39s
+2024.10.07 19:54:54 INFO  Connected to Build server: scala-cli v1.5.1
+2024.10.07 19:54:57 INFO  compiling -naumen.scala.course.2024_f4dd477a3a (3 scala sources)
+2024.10.07 19:55:12 INFO  time: Imported build in 17s
+2024.10.07 19:55:12 INFO  running doctor check
+2024.10.07 19:55:12 INFO  java targets: -naumen.scala.course.2024_f4dd477a3a, -naumen.scala.course.2024_f4dd477a3a-test
+2024.10.07 19:55:12 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.07 19:55:15 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 3.05s
+2024.10.07 19:55:31 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.10.07 19:55:37 INFO  time: indexed workspace in 25s
+2024.10.07 19:55:39 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.07 19:55:40 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 1.11s
+окт. 08, 2024 9:47:32 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 287
+окт. 08, 2024 9:47:32 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 288
+окт. 08, 2024 9:47:34 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 302
+окт. 08, 2024 9:47:35 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 313
+окт. 08, 2024 9:47:44 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 365
+окт. 08, 2024 10:52:28 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 564
+окт. 08, 2024 10:52:28 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 565
+окт. 08, 2024 10:52:47 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 630
+окт. 08, 2024 10:52:47 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 632
+2024.10.08 10:53:18 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.08 10:53:20 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 1.79s
+окт. 08, 2024 10:53:27 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 779
+2024.10.08 10:53:33 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.08 10:53:34 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 1.15s
+2024.10.08 10:53:36 INFO  compiling -naumen.scala.course.2024_f4dd477a3a (1 scala source)
+2024.10.08 10:53:42 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a in 6.13s
+2024.10.08 10:54:03 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.08 10:54:03 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.6s
+2024.10.08 10:54:10 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.08 10:54:10 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.86s
+окт. 08, 2024 10:55:49 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 873
+окт. 08, 2024 10:56:11 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 992
+2024.10.08 10:57:19 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.08 10:57:19 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.77s
+2024.10.08 10:58:13 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.08 10:58:13 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.53s
+окт. 08, 2024 10:58:24 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1298
+окт. 08, 2024 10:58:29 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1339
+окт. 08, 2024 10:58:29 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1340
+окт. 08, 2024 10:59:38 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1387
+2024.10.08 11:03:51 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.08 11:03:51 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.44s
+окт. 08, 2024 11:03:53 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1412
+2024.10.08 11:06:18 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.08 11:06:18 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.24s
+2024.10.08 11:08:16 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.08 11:08:16 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.22s
+2024.10.08 11:10:20 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.08 11:10:20 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.23s
+2024.10.08 11:11:27 WARN  Using indexes to guess the definition of sumOfDivBy3Or5
+окт. 08, 2024 11:11:27 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1819
+окт. 08, 2024 11:12:01 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1852
+2024.10.08 11:12:19 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.08 11:12:19 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.21s
+2024.10.08 11:12:26 WARN  Using indexes to guess the definition of Exercises
+2024.10.08 11:12:26 WARN  Using indexes to guess the definition of Exercises
+2024.10.08 11:13:10 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.08 11:13:10 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.21s
+2024.10.08 11:13:55 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.08 12:15:23 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.08 12:15:24 INFO  compiling -naumen.scala.course.2024_f4dd477a3a (1 scala source)
+2024.10.08 12:15:26 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a in 1.91s
+2024.10.08 12:15:27 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.08 20:25:27 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:31:30 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:32:10 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:32:42 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:33:10 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:33:34 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:34:17 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:35:35 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:35:54 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:35:59 INFO  compiling -naumen.scala.course.2024_f4dd477a3a (1 scala source)
+2024.10.09 12:36:01 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a in 2s
+2024.10.09 12:36:20 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:36:21 INFO  compiling -naumen.scala.course.2024_f4dd477a3a (1 scala source)
+2024.10.09 12:36:23 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a in 2.05s
+2024.10.09 12:36:23 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:38:09 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:39:00 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:39:39 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:16 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:19 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:20 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:21 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:21 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:22 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:24 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:45 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:46 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:46 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:48 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:49 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:50 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:51 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:52 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:53 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:53 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:57 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:58 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:44:59 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:29 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:35 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:37 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:38 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:38 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:40 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:42 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:42 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:43 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:44 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:44 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:46 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:47 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+окт. 09, 2024 12:45:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2338
+2024.10.09 12:45:47 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:48 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:49 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:49 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:50 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:51 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:52 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:53 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:55 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:56 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:56 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:45:56 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:01 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:02 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+окт. 09, 2024 12:46:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2447
+окт. 09, 2024 12:46:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2449
+2024.10.09 12:46:03 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:04 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:05 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:08 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:10 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:11 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:11 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:12 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:13 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:21 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:23 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:24 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:27 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:31 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:31 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:32 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:34 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:35 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:36 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:37 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:38 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:39 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:40 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:41 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:45 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:54 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:54 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:56 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:57 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:58 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:46:59 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:00 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:01 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:06 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:07 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:08 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:11 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:17 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+окт. 09, 2024 12:47:17 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2776
+окт. 09, 2024 12:47:17 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2778
+2024.10.09 12:47:17 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:18 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:28 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:29 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:30 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:31 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:31 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:32 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:33 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:39 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:41 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:42 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:47:44 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:48:13 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:48:25 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:48:32 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:48:34 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:48:43 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:48:55 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:48:56 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:48:57 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:48:57 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:48:58 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:48:59 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:49:00 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:49:00 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:49:02 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:49:04 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:49:07 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:49:08 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:49:09 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:49:09 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:49:50 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:54:26 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:54:29 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:54:32 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+окт. 09, 2024 12:54:32 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3083
+2024.10.09 12:54:32 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:54:35 WARN  Could not load snapshot text for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\main\scala\Exercises.scala
+2024.10.09 12:54:36 INFO  compiling -naumen.scala.course.2024_f4dd477a3a (1 scala source)
+2024.10.09 12:54:37 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a in 1.59s
+2024.10.09 12:54:40 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 12:54:40 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.31s
+2024.10.09 12:54:43 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 12:54:43 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.4s
+окт. 09, 2024 1:00:41 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3314
+окт. 09, 2024 1:03:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3431
+окт. 09, 2024 1:03:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3435
+2024.10.09 13:47:26 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 13:47:26 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.23s
+2024.10.09 13:51:45 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 13:51:45 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.21s
+2024.10.09 15:27:04 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 15:27:04 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.35s
+2024.10.09 15:27:15 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 15:27:15 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.28s
+2024.10.09 15:29:56 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 15:29:56 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.25s
+2024.10.09 15:39:22 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 15:39:22 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.19s
+окт. 09, 2024 3:39:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6023
+2024.10.09 15:39:35 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 15:39:35 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.19s
+2024.10.09 15:40:00 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 15:40:00 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.18s
+2024.10.09 15:40:08 WARN  Using indexes to guess the definition of sumOfDivBy3Or5
+2024.10.09 15:40:36 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 15:40:36 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.19s
+2024.10.09 15:40:47 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 15:40:47 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.24s
+2024.10.09 15:40:58 WARN  Using indexes to guess the definition of Exercises
+2024.10.09 15:41:08 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 15:41:08 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.18s
+окт. 09, 2024 3:41:09 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6416
+2024.10.09 15:50:17 INFO  compiling -naumen.scala.course.2024_f4dd477a3a (1 scala source)
+окт. 09, 2024 3:50:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6712
+2024.10.09 15:50:19 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a in 2.04s
+2024.10.09 15:50:19 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 15:50:20 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.2s
+2024.10.09 15:50:21 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.09 15:50:21 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.34s
+2024.10.10 21:20:25 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.10 21:20:27 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 1.33s
+2024.10.10 21:20:38 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.10 21:20:38 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.28s
+окт. 10, 2024 9:21:07 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7269
+окт. 10, 2024 9:21:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7289
+2024.10.10 21:21:14 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.10 21:21:14 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.65s
+2024.10.10 21:21:35 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.10 21:21:35 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.38s
+2024.10.10 21:23:01 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.10 21:23:01 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.52s
+2024.10.10 21:23:18 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.10 21:23:18 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.81s
+2024.10.10 21:23:23 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.10 21:23:23 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.28s
+2024.10.10 21:48:00 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.10 21:48:00 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.47s
+2024.10.10 21:48:32 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.10 21:48:32 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.38s
+окт. 10, 2024 9:52:07 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7804
+2024.10.10 21:52:11 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.10 21:52:11 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.57s
+окт. 10, 2024 9:52:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7841
+2024.10.10 22:05:20 INFO  Started: Metals version 1.3.5 in folders 'C:\Users\79193\-naumen.scala.course.2024.autumn' for client Visual Studio Code 1.94.0.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@6ff27d0d]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@1734b878]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@6ff27d0d]
+2024.10.10 22:05:25 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.10.10 22:05:27 INFO  no build target found for C:\Users\79193\-naumen.scala.course.2024.autumn\homeworks\homework_2\src\test\scala\Test.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.10 22:05:27 INFO  Attempting to connect to the build server...
+2024.10.10 22:05:27 INFO  Running BSP server List(C:\Users\79193\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\79193\-naumen.scala.course.2024.autumn\.scala-build\ide-options-v2.json, --json-launcher-options, C:\Users\79193\-naumen.scala.course.2024.autumn\.scala-build\ide-launcher-options.json, --envs-file, C:\Users\79193\-naumen.scala.course.2024.autumn\.scala-build\ide-envs.json, C:\Users\79193\-naumen.scala.course.2024.autumn)
+2024.10.10 22:05:28 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\79193\-naumen.scala.course.2024.autumn\.metals\bsp.trace.json or C:\Users\79193\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.10.10 22:05:36 INFO  BSP server: Starting compilation server
+2024.10.10 22:05:53 INFO  time: Connected to build server in 25s
+2024.10.10 22:05:53 INFO  Connected to Build server: scala-cli v1.5.1
+2024.10.10 22:05:53 INFO  time: Imported build in 0.25s
+2024.10.10 22:05:54 INFO  running doctor check
+2024.10.10 22:05:54 INFO  java targets: -naumen.scala.course.2024_f4dd477a3a, -naumen.scala.course.2024_f4dd477a3a-test
+2024.10.10 22:06:01 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.10 22:06:08 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.10.10 22:06:09 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 7.86s
+2024.10.10 22:06:11 INFO  time: indexed workspace in 17s
+2024.10.10 23:26:46 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.10 23:26:46 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.95s
+2024.10.11 07:22:45 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.11 07:22:48 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 3.89s
+2024.10.11 07:23:59 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.11 07:24:02 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 3.21s
+2024.10.11 07:24:04 WARN  Using indexes to guess the definition of Vector2D
+2024.10.11 07:24:07 WARN  Using indexes to guess the definition of Vector2D
+окт. 11, 2024 7:24:13 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 87
+окт. 11, 2024 7:24:15 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 94
+окт. 11, 2024 7:24:15 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 97
+окт. 11, 2024 7:24:15 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 98
+окт. 11, 2024 7:39:41 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 420
+окт. 11, 2024 7:39:51 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 490
+2024.10.11 07:45:32 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.11 07:45:33 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 1.04s
+окт. 11, 2024 7:45:33 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 563
+окт. 11, 2024 7:45:33 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 562
+2024.10.11 07:45:48 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.11 07:45:50 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 1.78s
+2024.10.11 07:45:59 WARN  Using indexes to guess the definition of Vector2D
+окт. 11, 2024 7:46:49 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 788
+окт. 11, 2024 7:46:53 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 800
+2024.10.11 07:49:18 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.11 07:49:18 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.86s
+2024.10.11 07:49:21 WARN  Using indexes to guess the definition of balls
+2024.10.11 07:50:07 INFO  compiling -naumen.scala.course.2024_f4dd477a3a-test (2 scala sources)
+2024.10.11 07:50:07 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a-test in 0.62s
+2024.10.11 07:50:14 INFO  compiling -naumen.scala.course.2024_f4dd477a3a (1 scala source)
+2024.10.11 07:50:26 INFO  time: compiled -naumen.scala.course.2024_f4dd477a3a in 11s
+2024.10.11 07:50:28 INFO  Shutting down server
+2024.10.11 07:50:28 INFO  shutting down Metals
+2024.10.11 07:50:28 INFO  Shut down connection with build server.
+2024.10.11 07:50:28 INFO  Exiting server
