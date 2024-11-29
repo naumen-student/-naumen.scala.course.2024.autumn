@@ -1,0 +1,109 @@
+PS C:\Users\garma> scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_421).
+Type in expressions for evaluation. Or try :help.
+
+scala> val a = "Hello Scala! This is Ayur Garmaev"
+a: String = Hello Scala! This is Ayur Garmaev
+
+scala> println(a)
+Hello Scala! This is Ayur Garmaev
+
+scala> println (a)
+Hello Scala! This is Ayur Garmaev
+
+scala> a = "Holla Scala! This is Ayur Garmaev"
+<console>:12: error: reassignment to val
+       a = "Holla Scala! This is Ayur Garmaev"
+         ^
+
+scala> val a = "Holla Scala! This is Ayur Garmaev
+<console>:1: error: unclosed string literal
+       val a = "Holla Scala! This is Ayur Garmaev
+               ^
+
+scala> val a = "Hola Scala! This is Ayur Garmaev"
+a: String = Hola Scala! This is Ayur Garmaev
+
+scala> print(a)
+Hola Scala! This is Ayur Garmaev
+scala> val a = "Bonjur Scala! This is Ayur Garmaev"
+a: String = Bonjur Scala! This is Ayur Garmaev
+
+scala> println(a)
+Bonjur Scala! This is Ayur Garmaev
+
+scala> val a = "Hello Scala! This is Ayur Garmaev"
+a: String = Hello Scala! This is Ayur Garmaev
+
+scala> val spanish = "Hola Scala! This is Ayur Garmaev"
+spanish: String = Hola Scala! This is Ayur Garmaev
+
+scala> val french = "Holla Scala! This is Ayur Garmaev"
+french: String = Holla Scala! This is Ayur Garmaev
+
+scala> println(a, spanish, french)
+(Hello Scala! This is Ayur Garmaev,Hola Scala! This is Ayur Garmaev,Holla Scala! This is Ayur Garmaev)
+
+scala> val my name = Ayur Garmaev
+<console>:1: error: illegal start of simple pattern
+       val my name = Ayur Garmaev
+                   ^
+
+scala> val my name = "Ayur Garmaev"
+<console>:1: error: illegal start of simple pattern
+       val my name = "Ayur Garmaev"
+                   ^
+
+scala> val name = "Ayur Garmaev"
+name: String = Ayur Garmaev
+
+scala> val english = "Hello Scala! This is"
+english: String = Hello Scala! This is
+
+scala> print(english, " ", name)
+(Hello Scala! This is, ,Ayur Garmaev)
+scala> println(english, " ", name)
+(Hello Scala! This is, ,Ayur Garmaev)
+
+scala> println(english + name)
+Hello Scala! This isAyur Garmaev
+
+scala> print(english + " " + name)
+Hello Scala! This is Ayur Garmaev
+scala> val spanish = "Hola Scala! This is"
+spanish: String = Hola Scala! This is
+
+scala> val french = "Bonjur Scala! This is"
+french: String = Bonjur Scala! This is
+
+scala> val china = "Nihao Scala! This is"
+china: String = Nihao Scala! This is
+
+scala> val revers_name = "veamraG ruyA"
+revers_name: String = veamraG ruyA
+
+scala> println(english + " " + name)
+Hello Scala! This is Ayur Garmaev
+
+scala> println(spanish + " " + name)
+Hola Scala! This is Ayur Garmaev
+
+scala> println(french + " " + name)
+Bonjur Scala! This is Ayur Garmaev
+
+scala> println(china + " " + name)
+Nihao Scala! This is Ayur Garmaev
+
+scala> println(english + " " + revers_name)
+Hello Scala! This is veamraG ruyA
+
+scala> println(spanish + " " + revers_name)
+Hola Scala! This is veamraG ruyA
+
+scala> println(french + " " + revers_name)
+Bonjur Scala! This is veamraG ruyA
+
+scala> println(china + " " + revers_name)
+Nihao Scala! This is veamraG ruyA
+
+scala>
