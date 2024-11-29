@@ -1,0 +1,19 @@
+.idea
+<<<<<<< ours
+*.log*
+*.checked*
+*.pom__sha1*
+*.pom__md5*
+*.jar*
+/homeworks/homework_2/null
+/homeworks/homework_2/src/test/scala/target
+=======
+.log
+.checked
+.pom__sha1
+.pom__md5
+.jar
+/homeworks/homework_2/null
+/homeworks/homework_2/src/test/scala/target
+*.log*
+>>>>>>> theirs
