@@ -1,0 +1,29 @@
+PS C:\Users\funov> scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 11.0.24).
+Type in expressions for evaluation. Or try :help.
+
+scala> def sayHello(hello: String, name: String): Unit = { println(s"$hello Scala! This is $name") }
+sayHello: (hello: String, name: String)Unit
+
+scala> val name = "Vanya"
+name: String = Vanya
+
+scala> sayHello("Hello", name)
+Hello Scala! This is Vanya
+
+scala> sayHello("Hola", name)
+Hola Scala! This is Vanya
+
+scala> sayHello("Guten tag", name)
+Guten tag Scala! This is Vanya
+
+scala> sayHello("Hello", name.reverse)
+Hello Scala! This is aynaV
+
+scala> sayHello("Guten tag", name.reverse)
+Guten tag Scala! This is aynaV
+
+scala> sayHello("Hola", name.reverse)
+Hola Scala! This is aynaV
+
+scala>
