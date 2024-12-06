@@ -37,8 +37,8 @@ object Tests extends ZIOSpecDefault {
         },
         test("second task test") {
             Exercises.task2((4, 4))
-                .provideLayer(fullLayer)
-                .map(res => assertTrue(res.matches(raw"((\d+\s){3}\d+\n){3}((\d+\s){3}\d+\n?)")))
+              .provideLayer(fullLayer)
+              .map(res => assertTrue(res.matches(raw"((-?\d+\s){3}-?\d+\n){3}((-?\d+\s){3}-?\d+\n?)")))
         },
         test("third task test1") {
             Exercises.task3((4, 4))
