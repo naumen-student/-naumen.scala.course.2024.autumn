@@ -1,124 +1,52 @@
+import utils.ColorService.ColorService
+import utils.{ColorService, PictureGenerationService}
+import utils.PictureGenerationService.PictureGenerationService
+import utils.Utils._
+import zio.{IO, Random, URIO, ZIO}
+
+import java.awt.Color
 
 object Exercises {
 
     /**
-     * Задание №1
-     * Дана императивная функция findSumImperative.
-     * Напишите ее аналог (findSumFunctional) в функциональном стиле.
-     *
-     * ПОДСКАЗКА
-     * Стоит воспользоваться методами, которые предоставляет объект List или рекурсией.
-     * Страница с полезностями List: https://alvinalexander.com/scala/list-class-methods-examples-syntax/
+     * В задании необходимо модифицировать ZIO объект, чтобы в случае ошибки в методе getColor
+     * вернулся None, а в случае упеха Some
      */
-    def findSumImperative(items: List[Int], sumValue: Int): (Int, Int) = {
-        var result: (Int, Int) = (-1, -1)
-        for (i <- 0 until items.length) {
-            for (j <- 0 until items.length) {
-                if (items(i) + items(j) == sumValue && i != j) {
-                    result = (i, j)
-                }
-            }
-        }
-        result
-    }
-
-    def findSumFunctional(items: List[Int], sumValue: Int) = {
-        (-1, -1)
-    }
+    def task1(r: Int, g: Int, b: Int): URIO[ColorService, Option[Color]] =
+        ZIO.serviceWithZIO[ColorService](_.getColor(r, g, b).option)
 
 
     /**
-     * Задание №2
-     *
-     * Дана рекурсивная функция simpleRecursion.
-     * Перепишите ее так, чтобы получилась хвостовая рекурсивная функция.
-     *
-     * Для прохождения теста на большое количество элементов в списке
-     * используйте анотацию @tailrec к вашей функции.
+     * Неободимо модифицировать ZIO объект так, чтобы он возвращал текстовую матрицу цветов вида
+     * 1 23 -4
+     * 25 -1 2
+     * где элементы - числовые значения объекта Color (можно получить через getRGB)
      */
-    def simpleRecursion(items: List[Int], index: Int = 1): Int = {
-        items match {
-            case head :: tail =>
-                if (head % 2 == 0) {
-                    head * simpleRecursion(tail, index + 1) + index
-                } else {
-                    -1 * head * simpleRecursion(tail, index + 1) + index
-                }
-            case _ => 1
-        }
-    }
+    def task2(size: (Int, Int)): ZIO[PictureGenerationService, GenerationError, String] =
+        ZIO.serviceWithZIO[PictureGenerationService](_.generatePicture(size)).map(_.lines.map(_.map(color=>Integer.toUnsignedLong(color.getRGB)).mkString(" ")).mkString("\n"))
 
-    def tailRecRecursion(items: List[Int]): Int = {
-        1
-    }
 
     /**
-     * Задание №3
-     * Реализуйте алгоритм бинарного поиска, который соответсвует всем правилам функционального программирования.
-     * Необходимо возвращать индекс соответствующего элемента в массиве
-     * Если ответ найден, то возвращается Some(index), если нет, то None
+     * В задаче необходимо поработать с ошибками
+     * 1. Необходимо, чтобы тип ошибки был единым для всего объекта ZIO, иначе не соберется
+     * 2. Необходимо добавить в случае каждой из ошибок возвращать ее с определенным текстом
+     *  - при ошибке генерации случайного цвета -> Не удалось создать цвет
+     *  - при генерации картинки -> Ошибка генерации изображения
+     *  - при заполнении картинки -> Возникли проблемы при заливке изображения
      */
-
-    def functionalBinarySearch(items: List[Int], value: Int): Option[Int] = {
-        None
-    }
+    def task3(size: (Int, Int)): ZIO[PictureGenerationService with ColorService, GenerationError, Picture] =
+        for {
+            colorServ <- ZIO.service[ColorService]
+            pictureServ <- ZIO.service[PictureGenerationService]
+            color <- colorServ.generateRandomColor().mapError(_=>new GenerationError("Не удалось создать цвет"))
+            picture <- pictureServ.generatePicture(size).mapError(_=>new GenerationError("Ошибка генерации изображения"))
+            filledPicture <- pictureServ.fillPicture(picture, color).mapError(_=>new GenerationError("Возникли проблемы при заливке изображения"))
+        } yield filledPicture
 
     /**
-     * Задание №4
-     * Реализуйте функцию, которая генерирует список заданной длинны c именами.
-     * Функция должна соответствовать всем правилам функционального программирования.
-     *
-     * Именем является строка, не содержащая иных символов, кроме буквенных, а также начинающаяся с заглавной буквы.
+     * Необходимо предоставить объекту ZIO все необходимые зависимости
      */
+    def task4(size: (Int, Int)): IO[GenerationError, Picture] =
+        task3(size).provideSomeLayer[ColorService](PictureGenerationService.live).provideLayer(ColorService.live)
 
-    def generateNames(namesСount: Int): List[String] = {
-        if (namesСount < 0) throw new Throwable("Invalid namesCount")
-        Nil
-    }
-
-}
-
-/**
- * Задание №5
- *
- * Дана реализация сервиса по смене номера SimpleChangePhoneService с методом changePhone
- * Необходимо написать реализацию этого сервиса с учетом правил работы со сторонними эффектами (SideEffects).
- *
- * Для этого необходимо сначала реализовать собственный сервис работы с телефонными номерами (PhoneServiceSafety),
- * используя при этом методы из unsafePhoneService.
- * Методы должны быть безопасными, поэтому тип возвращаемых значений необходимо определить самостоятельно.
- * Рекомендуется воспользоваться стандартными типами Scala (например Option или Either).
- *
- * Затем, с использованием нового сервиса, необходимо реализовать "безопасную" версию функции changePhone.
- * Функция должна возвращать ok в случае успешного завершения или текст ошибки.
- *
- * Изменять методы внутри SimplePhoneService не разрешается.
- */
-
-object SideEffectExercise {
-    import Utils._
-
-    class SimpleChangePhoneService(phoneService: SimplePhoneService) extends ChangePhoneService {
-        override def changePhone(oldPhone: String, newPhone: String): String = {
-            val oldPhoneRecord = phoneService.findPhoneNumber(oldPhone)
-            if (oldPhoneRecord != null) {
-                phoneService.deletePhone(oldPhoneRecord)
-            }
-            phoneService.addPhoneToBase(newPhone)
-            "ok"
-        }
-    }
-
-
-    class PhoneServiceSafety(unsafePhoneService: SimplePhoneService) {
-        def findPhoneNumberSafe(num: String) = ???
-
-        def addPhoneToBaseSafe(phone: String) = ???
-
-        def deletePhone(phone: String) = ???
-    }
-
-    class ChangePhoneServiceSafe(phoneServiceSafety: PhoneServiceSafety) extends ChangePhoneService {
-        override def changePhone(oldPhone: String, newPhone: String): String = ???
-    }
 }
