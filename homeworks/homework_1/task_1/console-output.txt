@@ -1,0 +1,27 @@
+C:\Users\karam\Projects>scala
+Welcome to Scala 2.12.13 (OpenJDK 64-Bit Server VM, Java 19.0.0).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Vladislav Karamyshev"
+name: String = Vladislav Karamyshev
+
+scala> "Hello Scala! This is ${name}"
+res0: String = Hello Scala! This is ${name}
+
+scala> s"Hello Scala! This is ${name}"
+res1: String = Hello Scala! This is Vladislav Karamyshev
+
+scala> s"Hola Scala! This is ${name}"
+res2: String = Hola Scala! This is Vladislav Karamyshev
+
+scala> s"Guten tag Scala! This is ${name}"
+res3: String = Guten tag Scala! This is Vladislav Karamyshev
+
+scala> println(s"Guten tag Scala! This is ${name.reverse}")
+Guten tag Scala! This is vehsymaraK vaslidalV
+
+scala> println(s"Hola Scala! This is ${name.reverse}")
+Hola Scala! This is vehsymaraK vaslidalV
+
+scala> println(s"Hello Scala! This is ${name.reverse}")
+Hello Scala! This is vehsymaraK vaslidalV
