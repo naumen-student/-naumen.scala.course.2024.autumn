@@ -1,0 +1,24 @@
+PS C:\Users\user\IdeaProjects\naumen.scala.course.2024.autumn> scala
+Welcome to Scala 3.5.0 (17, Java OpenJDK 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Evegnii"
+val name: String = Evegnii
+
+scala> println(s"Hello Scala! This is ${name}")
+Hello Scala! This is Evegnii
+
+scala> val helloWords: List[String] = List("hello", "Hola", "Guten tag")
+val helloWords: List[String] = List(hello, Hola, Guten tag)
+
+scala> helloWords.foreach { x => println(s"${x} Scala! This is ${name}")}
+hello Scala! This is Evegnii
+Hola Scala! This is Evegnii
+Guten tag Scala! This is Evegnii
+
+scala> helloWords.foreach { x => println(s"${x} Scala! This is ${name.reverse}")}
+hello Scala! This is iingevE
+Hola Scala! This is iingevE
+Guten tag Scala! This is iingevE
+
+scala>
