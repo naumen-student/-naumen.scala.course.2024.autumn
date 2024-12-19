@@ -1,66 +1,64 @@
-import utest._
+import scala.language.higherKinds
+import scala.util.{Failure, Success, Try}
 
-import scala.util.Random
+/*
+  Задание №4
+  Давайте реализуем свою монаду для обработки ошибок.
+  Нужно:
+  1) Реализовать функцию map в трейте MonadError
+  2) Написать инстанс MonadError для EIO
+  3) Реализовать функцию possibleError для обработки кода, который может вызывать ошибку
+  Примеры использования можно посмотреть в тестах.
+  Подсказка: На Either определён flatMap, его можно переиспользовать
+ */
+object Task4 extends App {
+  trait MonadError[F[_, _], E] {
+    def pure[A](value: A): F[E, A]
+    def flatMap[A, B](fa: F[E, A])(f: A => F[E, B]): F[E, B]
 
-object Test4 extends TestSuite {
-  override def tests: Tests = Tests {
-    import Task4._
-    import Task4.EIOSyntax._
+    def map[A, B](fa: F[E, A])(f: A => B): F[E, B] = flatMap(fa)(a => pure(f(a)))
 
-    'leftIdentityLow - {
-      assert(EIO(0).flatMap(x => EIO(x + 1)) == EIO(1))
+    def raiseError[A](fa: F[E, A])(error: => E):  F[E, A]
+    def handleError[A](fa: F[E, A])(handle: E => A): F[E, A]
+  }
+
+  case class EIO[+E, +A](value: Either[E, A])
+  object EIO {
+    def apply[A](value: A): EIO[Nothing, A] = EIO[Nothing, A](Right(value))
+
+    def error[E, A](error: E): EIO[E, A] = EIO[E, A](Left(error))
+
+    def possibleError[A](f: => A): EIO[Throwable, A] = Try(f) match {
+      case Failure(exception) => EIO(Left(exception))
+      case Success(value) => EIO(Right(value))
     }
-    'rightIdentityLow - {
-      assert(EIO(0).flatMap(x => EIO.apply(x)) == EIO(0))
-    }
-    'associativityLow - {
-      val f: Int => EIO[Nothing, Int] = x => EIO(x + 1)
-      val g: Int => EIO[Nothing, Int] = x => EIO(x * 10)
-      assert(EIO(0).flatMap(f).flatMap(g) == EIO(0).flatMap(x => f(x).flatMap(g)))
-    }
-    'usage - {
-      'simpleUsage - {
-        val (x, y, z) = (Random.nextInt(), Random.nextInt(), Random.nextInt())
-        val p = for {
-          a <- EIO(x)
-          c <- EIO(y)
-          d <- EIO(z)
-        } yield a + c + d
-        assert(p == EIO(Right(x + y + z)))
-      }
-      'errorUsage - {
-        val p = for {
-          a <- EIO(0)
-          _ <- EIO.error[String, Int]("Error")
-        } yield a
-        assert(p == EIO(Left("Error")))
-      }
-      'possibleErrorUsage - {
-        val p = for {
-          a <- EIO(12)
-          b <- EIO.possibleError(12 / 0)
-        } yield a + b
-        assert(p.value.isLeft)
-      }
-      'recoverErrorUsage - {
-        val (x, y, z) = (Random.nextInt(), Random.nextInt(), Random.nextInt())
-        val p = for {
-          a <- EIO(x)
-          b <- EIO.possibleError(y / 0).handleError(_ => y)
-          c <- EIO(z)
-        } yield a + b + c
 
-        assert(p == EIO(Right(x + y + z)))
+    implicit def monad[E]: MonadError[EIO, E] = new MonadError[EIO, E] {
+      override def pure[A](value: A): EIO[E, A] = apply(value)
+
+      override def flatMap[A, B](fa: EIO[E, A])(f: A => EIO[E, B]): EIO[E, B] = fa.value match {
+        case Left(error) => EIO(Left(error))
+        case Right(value) => f(value)
       }
-      'skippingErrorStopsEvaluation - {
-        val p = for {
-          a <- EIO(0)
-          v <- EIO.possibleError(12 / 0)
-          b <- EIO.possibleError(32 / 12).handleError(_ => 1)
-          c <- EIO(2)
-        } yield a + b + c + v
-        assert(p.value.isLeft)
+
+      override def raiseError[A](fa: EIO[E, A])(error: => E): EIO[E, A] = EIO.error(error)
+
+      override def handleError[A](fa: EIO[E, A])(handle: E => A): EIO[E, A] = fa.value match {
+        case Left(error) => EIO(Right(handle(error)))
+        case Right(value) => EIO(Right(value))
       }
+    }
+  }
+
+  object EIOSyntax {
+    implicit class EIOOps[E, A](val eio: EIO[E, A]) {
+      def flatMap[B](f: A => EIO[E, B]): EIO[E, B] =
+        EIO.monad[E].flatMap(eio)(f)
+
+      def map[B](f: A => B): EIO[E, B] = EIO.monad.map(eio)(f)
+
+      def handleError(f: E => A): EIO[E, A] =
+        EIO.monad.handleError(eio)(f)
     }
   }
 }
